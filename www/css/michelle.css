@@ -113,3 +113,17 @@ h1 {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
 }
+
+.titleBlock {
+	    background-color: black;
+	    color: white;
+	    margin: 0 0 20px 0;
+	    padding: 20px;
+} 
+	
+.block {
+	    background-color: #9246AF;<!-- Purple -->
+	    color: white;
+	    margin: 10px 0 10px 0;
+	    padding: 10px;
+} 
