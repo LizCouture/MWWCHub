@@ -104,11 +104,12 @@ h1 {
 } 
 	
 .block {
-	    background-color: #9246AF;<!-- Purple -->
+	    background-color: #9246AF;
 	    color: white;
 	    margin: 10px 0 10px 0;
 	    padding: 10px;
 } 
+
 .footer {
 	background-color: black;
 	color: white;
@@ -129,4 +130,16 @@ h1 {
     top: 0; 
     left: 0;
     width: 100%;	
+}
+
+th a:hover {
+    background-color: gray;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+ul.event {
+	list-style-type: none;
 }
