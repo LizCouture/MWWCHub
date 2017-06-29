@@ -112,4 +112,19 @@ h1 {
 .blink {
     animation:fade 3000ms infinite;
     -webkit-animation:fade 3000ms infinite;
+    
+    
+.header
+    {
+        background-color: lilac;
+        color: gray;
+        height: 60px;
+        
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+        
 }
