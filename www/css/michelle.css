@@ -7,20 +7,25 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
+/*
     background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
     background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+*/
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
+    font-size:18px;
     height:100%;
     margin:0px;
     padding:0px;
-    text-transform:uppercase;
     width:100%;
 	
 	margin-top:40px;
 	margin-bottom:60px;
+}
+body.withMargins{
+	margin-left:10px;
+	margin-right:10px;
 }
 
 /* Portrait layout (default) */
@@ -109,7 +114,7 @@ h1 {
 .footer {
 	background-color: black;
 	color: white;
-	height: 60px;
+	height: 80px;
     position: fixed;
     z-index: 100; 
     bottom: 0; 
@@ -131,6 +136,14 @@ h1 {
 th a:hover {
     background-color: gray;
 }
+a:link{
+	color:white;
+	text-decoration:none;
+}
+a:visited{
+	color:white;
+	text-decoration:none;
+}
 
 .bold {
   font-weight:bold;
@@ -138,4 +151,10 @@ th a:hover {
 
 ul.event {
 	list-style-type: none;
+}
+
+.circle {
+	border-radius:50% 50% 50% 50%;  
+	width:100px;
+	height:100px;
 }
