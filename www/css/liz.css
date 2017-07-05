@@ -1,0 +1,20 @@
+.left_half {
+	position: relative;
+	display: block;
+	float: left;
+}
+.right_half {
+	position: relative;
+	display: block;
+	float: right;
+}
+.schedule_item{
+	width: 50%;
+	clear: both;
+}
+
+.num_label{
+	font-size: 5em;
+	font-face: bold;
+	font-color: white;
+}
