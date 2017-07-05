@@ -12,7 +12,7 @@
 ]
 
 "speeches":[
-  {"speechName": "Last Comic Standing", "speechSpeaker": "Kelly Macfarland", "speechTime": "VIP Reception"}
+  {"speechTitle": "Last Comic Standing", "speechSpeaker": "Kelly Macfarland", "speechTime": "VIP Reception"}
   {"speechName": "Master of Ceremony", "speechSpeaker": "Stephanie Leydon", "speechTime": "Conference"}
   {"speechName": "Motivational Leadership", "speechSpeaker": "Dr. Patti Fletcher", "speechTime": "Breakfast"}
   {"speechName": "Globalization Partnerships", "speechSpeaker": "Nicole Sahin", "speechTime": "Breakfast"}
