@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
+  <head>
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
@@ -18,34 +18,29 @@
 <!--MODIFIED FOR THE m_eventPages FOLDER-->
 	<div class="footer">
 		<h1 style="font-size=12px">
-			<a href="../m_index.html">HOME<a>
-			<a href="../m_schedule.html">SCHEDULE<a>
-			<a href="../m_starred.html">STARRED<a>
-		
+			<table style="text-align:center; width:100%">
+				<td><a href="../m_index.html">HOME</a></td>
+				<td><a href="../m_schedule.html">SCHEDULE</a></td>
+				<td><a href="../m_starred.html">STARRED</a></td>
+			</table>
 		</h1>
 	</div>
 	
+
 <!--Title-->	
 	<h1 class="bold">Title</h1>
 	<br>
 <!--Description-->
 	<p><span class="bold">DESCRIPTION</span></p>
 	<p>Description</p>
-	
 	<br>
-
 	<p><span class="bold">PRESENTER(S)</span><p>
 	
-	<table style="width:100%">
-<!--Profile Photo-->	
-		<th><img src="img/default.jpg" alt="Profile Photo" class="circle"></th>
-		<td style="text-align:center"><h3>Author's Name</h3></td>
-	</table>
+	<div>
+		<iframe type="text/html" src="../m_profiles/testProfile.html" style="border:0px #FFFFFF none; height:100%; border:none; overflow:visible;" scrolling="no" marginheight="0px" marginwidth="0px"></iframe>
+	</div>
 	
-<!--This can be a section on the event page, or can lead to another folder with profile pages.-->
-	<p>Title of Person</p>
-	<p>Personal Statement</p>
-	<p>Contact info???</p>
+
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

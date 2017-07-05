@@ -7,11 +7,7 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-color:#E4E4E4;
-/*
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-*/
+	
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size:18px;
@@ -22,13 +18,10 @@ body {
 	
 	margin-top:40px;
 	margin-bottom:60px;
-	margin-left:10px;
-	margin-left:10px;
 
 }
 body.schedule{
-margin-left:0px;
-margin-right:0px;
+
 margin-top:40px;
 margin-bottom:60px;
 }
@@ -110,16 +103,41 @@ h1 {
 } 
 	
 .block {
-	    background-color: #9246AF;
+		background-color: #9246AF;
 	    color: white;
-	    margin: 10px 0 10px 0;
 	    padding: 10px;
+		width: 100%;
 } 
 
+table#mainSchedule {
+	width: 100%;
+	padding: 0px;
+	
+}
+
+table#mainSchedule th {
+    width: 100px;
+	height: 100px;
+	font-size: 20px;
+}
+
+table#mainSchedule tr:nth-child(even) {
+	background-color: #9246AF;
+
+}
+table#mainSchedule tr:nth-child(odd) {
+    background-color: #b277c9;
+
+}
+table#mainSchedule td {
+    background-color: white;
+	height: 100px;
+}
+
 .footer {
-	background-color: black;
+	background-color: #671487;
 	color: white;
-	height: 80px;
+	height: 50px;
     position: fixed;
     z-index: 100; 
     bottom: 0; 
@@ -128,7 +146,7 @@ h1 {
 }
 
 .header {
-	background-color: black;
+	background-color: #671487;
 	color: white;
 	height: 30px;
     position: fixed;
@@ -151,11 +169,16 @@ a:visited{
 }
 
 .bold {
-  font-weight:bold;
+  font-weight: bold;
+
 }
 
-ul.event {
+.eventInfo {
+	text-align: left;
+	color: black;
 	list-style-type: none;
+	padding: 5px;
+	
 }
 
 .circle {

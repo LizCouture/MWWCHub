@@ -16,14 +16,82 @@
 	</div>
 	<div class="footer">
 		<h1 style="font-size=12px">
-			<a href="m_index.html">HOME<a>
-			<a href="m_schedule.html">SCHEDULE<a>
-			<a href="m_starred.html">STARRED<a>
-		
+			<table style="text-align:center; width:100%">
+				<td><a href="m_index.html">HOME</a></td>
+				<td><a href="m_schedule.html">SCHEDULE</a></td>
+				<td><a href="m_starred.html">STARRED</a></td>
+			</table>
 		</h1>
 	</div>
-
-	<p style="text-align:center"><br><br><br><br><br>nothing to see here</p>
+	
+	<div id="starredSchedule">
+			<table id="mainSchedule">
+			<!--To add an event, add a new <tr> -->
+				<tr>
+					<!--Left box-->
+					<th>
+						<a href="m_eventPages/m_eventTemplate.html">
+							<!--JSONTAG startTime-->
+							<span class="startTime">0:00</span>
+							<span style="font-size:12px">PM</span>
+							<br>
+							<!--JSONTAG endTime-->
+							<span class="endTime">0:00</span>
+							<span style="font-size:12px">PM</span>
+						</a>
+					</th>
+					<!--Right box-->
+					<td>
+						<div class="eventInfo">
+							<p>
+								<!--JSONTAG speechTitle-->
+								<span class="bold" class="speechTitle">Title</span>
+								<br>
+								<!--JSONTAG speaker-->
+								<span class="speaker">Presenter</span>
+								<br>
+								<!--JSONTAG location-->
+								<span class="location">Location</span>
+							</p>
+						</div>
+						<!--Insert star here-->
+					</td>
+				</tr>
+				
+				<tr>
+					<!--Left box-->
+					<th>
+						<a href="m_eventPages/m_eventTemplate.html">
+							<!--JSONTAG startTime-->
+							<span class="startTime">0:00</span>
+							<span style="font-size:12px">PM</span>
+							<br>
+							<!--JSONTAG endTime-->
+							<span class="endTime">0:00</span>
+							<span style="font-size:12px">PM</span>
+						</a>
+					</th>
+					<!--Right box-->
+					<td>
+						<div class="eventInfo">
+							<p>
+								<!--JSONTAG speechTitle-->
+								<span class="bold" class="speechTitle">Title</span>
+								<br>
+								<!--JSONTAG speaker-->
+								<span class="speaker">Presenter</span>
+								<br>
+								<!--JSONTAG location-->
+								<span class="location">Location</span>
+							</p>
+						</div>
+						<!--Insert star here-->
+					</td>
+				</tr>
+			
+			</table>
+	</div>
+	
 	
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
