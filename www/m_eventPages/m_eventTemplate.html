@@ -13,32 +13,76 @@
 
 <!-- The following two divs create the header and footer. Remember to put them in every screen.-->	
 	<div class="header">
-		<h1>EVENT</h1>
+		<h1>Event</h1>
 	</div>
-<!--MODIFIED FOR THE m_eventPages FOLDER-->
+<!--MODIFIED FOR THE m_eventPages FOLDER (requires ../ to function properly)-->
 	<div class="footer">
-		<h1 style="font-size=12px">
 			<table style="text-align:center; width:100%">
-				<td><a href="../m_index.html">HOME</a></td>
-				<td><a href="../m_schedule.html">SCHEDULE</a></td>
-				<td><a href="../m_starred.html">STARRED</a></td>
+				<td><a href="../m_index.html"><img src="../img/icon_Home.png" height="30px"/></a></td>
+				<td><a href="../m_schedule.html"><img src="../img/icon_Calendar.png" height="30px"/></a></td>
+				<td><a href="../m_starred.html"><img src="../img/icon_CalendarStarred.png" height="30px"/></a></td>
+				<td><a href="../m_survey.html"><img src="../img/icon_Survey.png" height="30px"/></a></td>
 			</table>
-		</h1>
+		
 	</div>
 	
 
-<!--Title-->	
-	<h1 class="bold">Title</h1>
-	<br>
-<!--Description-->
-	<p><span class="bold">DESCRIPTION</span></p>
-	<p>Description</p>
-	<br>
-	<p><span class="bold">PRESENTER(S)</span><p>
-	
-	<div>
-		<iframe type="text/html" src="../m_profiles/testProfile.html" style="border:0px #FFFFFF none; height:100%; border:none; overflow:visible;" scrolling="no" marginheight="0px" marginwidth="0px"></iframe>
+<!--JSONTAG eventTitle-->
+	<div class="eventTitle">
+		<p>Title</p>
 	</div>
+	
+	
+		<table style="width:100%">
+			<tr>
+				<td style="width:1px"></td>
+				<td class="eventSubtitles">DESCRIPTION</td>
+				<td style="width:1px"></td>
+			</tr>
+			<tr>
+				<td style="width:1px"></td>
+				<td class="eventInfoArea">
+					<!--JSONTAG startTime-->
+					<!--JSONTAG endTime-->
+					<p><span class="startTime">0:00PM</span> - <span class="endTime">0:00PM</span></p>
+					<!--JSONTAG eventLocation-->
+					<p class="eventLocation">Location</p>
+					<!--JSONTAG eventDescription-->
+					<p class="eventDescription">Description</p>
+					<br>
+				</td>
+				<td style="width:1px"></td>
+			</tr>
+		</table>	
+			
+	<br>
+	
+		<table style="width:100%">
+			<tr>
+				<td style="width:1px"></td>
+				<td class="eventSubtitles">SPEAKER(S)</td>
+				<td style="width:1px"></td>
+			</tr>
+			<tr>
+				<td style="width:1px"></td>
+				<td class="eventInfoArea">
+					<!--Each author block is within a new <table class="profileBlock"></table>. Add more authors with more <table class="profileBlock"></table>'s, copying the template.-->
+					<table style="width:100%" class="profileBlock">
+							<!--JSONTAG authorPhoto-->
+							<td style="background-color:white; text-align:center;"><span class="authorPhoto"><img src="../img/default.png" alt="Profile Photo" class="circle"></span></td>
+							<!--JSONTAG authorName-->
+							<td style="padding-left:15px; padding-right:5px; background-color:white;">
+								<p style="font-weight:bold" class="authorName">Author's Name</p>
+								<!--JSONTAG authorTitle-->
+								<p class="authorTitle">Author's Title</p>
+							</td>
+					</table>
+					
+					
+				</td>
+				<td style="width:1px"></td>
+			</tr>
+		</table>
 	
 
 

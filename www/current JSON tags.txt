@@ -1,0 +1,40 @@
+use ctrl+f "JSONTAG" or "JSONTAG tagName" to find tags.
+
+--m_schedule.html--
+id's:
+- generalSchedule
+- schedule
+
+classes:
+- block
+- startTime
+- endTime
+- eventLink
+- eventTitle
+- eventSpeaker
+- eventLocation
+- star
+
+--m_starred.html:--
+id's:
+- starredSchedule
+- schedule
+
+classes:
+- block
+- startTime
+- endTime
+- eventLink
+- eventTitle
+- eventSpeaker
+- eventLocation
+
+--m_eventTemplate.html:--
+- eventTitle
+- startTime
+- endTime
+- eventLocation
+- eventDescription
+- authorPhoto
+- authorName
+- authorTitle

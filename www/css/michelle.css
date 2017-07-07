@@ -16,14 +16,17 @@ body {
     padding:0px;
     width:100%;
 	
-	margin-top:40px;
+	
+	margin-top:30px;
 	margin-bottom:60px;
 
 }
+
 body.schedule{
 
 margin-top:40px;
 margin-bottom:60px;
+
 }
 
 /* Portrait layout (default) */
@@ -51,7 +54,7 @@ margin-bottom:60px;
 }
 
 h1 {
-    font-size:24px;
+    font-size:20px;
     font-weight:normal;
     margin:0px;
     overflow:visible;
@@ -101,35 +104,28 @@ h1 {
 	    margin: 0 0 20px 0;
 	    padding: 20px;
 } 
-	
-.block {
-		background-color: #9246AF;
-	    color: white;
-	    padding: 10px;
-		width: 100%;
-} 
 
-table#mainSchedule {
+table#schedule {
 	width: 100%;
 	padding: 0px;
 	
 }
 
-table#mainSchedule th {
+table#schedule th {
     width: 100px;
 	height: 100px;
 	font-size: 20px;
 }
 
-table#mainSchedule tr:nth-child(even) {
+table#schedule tr:nth-child(even) {
 	background-color: #9246AF;
 
 }
-table#mainSchedule tr:nth-child(odd) {
+table#schedule tr:nth-child(odd) {
     background-color: #b277c9;
 
 }
-table#mainSchedule td {
+table#schedule td {
     background-color: white;
 	height: 100px;
 }
@@ -137,23 +133,36 @@ table#mainSchedule td {
 .footer {
 	background-color: #671487;
 	color: white;
-	height: 50px;
+	height: 40px;
     position: fixed;
     z-index: 100; 
     bottom: 0; 
     left: 0;
     width: 100%;
+	font-variant: small-caps;
+	font-size: 12px;
+	text-align: center;
+	padding-bottom: 5px;
+	text-align:center;
+	width:100%;
+
+	
 }
 
 .header {
 	background-color: #671487;
 	color: white;
-	height: 30px;
+	height: 20px;
     position: fixed;
     z-index: 100; 
     top: 0; 
     left: 0;
     width: 100%;	
+	font-variant: small-caps;
+	font-size: 15px;
+	text-align: center;
+	padding-bottom: 5px;
+
 }
 
 th a:hover {
@@ -185,4 +194,41 @@ a:visited{
 	border-radius:50% 50% 50% 50%;  
 	width:100px;
 	height:100px;
+}
+
+.eventTitle{
+	text-align: center;
+	padding-top: .1px;
+	padding-bottom: .1px;
+	width: 100%;
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.eventSubtitles{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	font-variant: small-caps;
+	background-color:#b277c9;
+}
+
+.eventInfoArea{
+	background-color:white;
+	padding-left:5px;
+	padding-right:5px;
+	width: 100%;
+}
+
+.profileBlock tr:nth-child(even){
+	background-color: #dedede;
+}
+
+.profileBlock tr:nth-child(odd){
+	background-color: #D8D8D8;
 }
