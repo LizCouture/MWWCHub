@@ -232,7 +232,7 @@ a:visited{
 .profileBlock tr:nth-child(odd){
 	background-color: #D8D8D8;
 }
-.indexTop tr:nth-child (odd){
+.indexTop tr:nth-child (even){
     font-family: "Apple Chancery", Apple Chancery, cursive;
     font-style: italic;
     font-size: 30;	
