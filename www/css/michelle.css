@@ -236,13 +236,6 @@ a:visited{
 	background-color: #D8D8D8;
 }
 
-.indexBottom{
-	border:10px solid;
-	border-color: #9246AF;
-	background-color:white;
-	height: 100px;
-}
-
 .shadow{
 	box-shadow: 2px 2px 5px #888888;
 }
