@@ -235,8 +235,9 @@ a:visited{
 }
 
 .indexBottom{
-	border:10px solid;
+	border:5px solid;
+	border-radius:45px;
 	border-color: #9246AF;
-	background-color:white;
-	height: 100px;
+	background: linear-gradient(to bottom, #ffffff -7%, #cc00cc 99%);
+	height: 85px;
 }
