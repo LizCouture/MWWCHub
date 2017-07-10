@@ -232,3 +232,8 @@ a:visited{
 .profileBlock tr:nth-child(odd){
 	background-color: #D8D8D8;
 }
+
+.indexBottom{
+	border:10px solid purple;
+	background-color:black;
+}
