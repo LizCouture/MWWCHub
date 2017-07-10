@@ -217,6 +217,7 @@ a:visited{
 	font-weight: bold;
 	font-variant: small-caps;
 	background-color:#b277c9;
+	box-shadow: 2px 2px 10px #888888;
 }
 
 .eventInfoArea{
@@ -224,6 +225,7 @@ a:visited{
 	padding-left:5px;
 	padding-right:5px;
 	width: 100%;
+	box-shadow: 2px 2px 10px #888888;
 }
 
 .profileBlock tr:nth-child(even){
@@ -239,4 +241,8 @@ a:visited{
 	border-color: #9246AF;
 	background-color:white;
 	height: 100px;
+}
+
+.shadow{
+	box-shadow: 2px 2px 5px #888888;
 }
