@@ -1,0 +1,234 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#E4E4E4;
+	
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:18px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    width:100%;
+	
+	
+	margin-top:30px;
+	margin-bottom:60px;
+
+}
+
+body.schedule{
+
+margin-top:40px;
+margin-bottom:60px;
+
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:20px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+.titleBlock {
+	    background-color: black;
+	    color: white;
+	    margin: 0 0 20px 0;
+	    padding: 20px;
+} 
+
+table#schedule {
+	width: 100%;
+	padding: 0px;
+	
+}
+
+table#schedule th {
+    width: 100px;
+	height: 100px;
+	font-size: 20px;
+}
+
+table#schedule tr:nth-child(even) {
+	background-color: #9246AF;
+
+}
+table#schedule tr:nth-child(odd) {
+    background-color: #b277c9;
+
+}
+table#schedule td {
+    background-color: white;
+	height: 100px;
+}
+
+.footer {
+	background-color: #671487;
+	color: white;
+	height: 30px;
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+	font-variant: small-caps;
+	font-size: 12px;
+	text-align: center;
+	padding-bottom: 5px;
+	text-align:center;
+	width:100%;
+
+	
+}
+
+.header {
+	background-color: #671487;
+	color: white;
+	height: 20px;
+    position: fixed;
+    z-index: 100; 
+    top: 0; 
+    left: 0;
+    width: 100%;	
+	font-variant: small-caps;
+	font-size: 15px;
+	text-align: center;
+	padding-bottom: 5px;
+
+}
+
+th a:hover {
+    background-color: gray;
+}
+a:link{
+	color:white;
+	text-decoration:none;
+}
+a:visited{
+	color:white;
+	text-decoration:none;
+}
+
+.bold {
+  font-weight: bold;
+
+}
+
+.eventInfo {
+	text-align: left;
+	color: black;
+	list-style-type: none;
+	padding: 5px;
+	
+}
+
+.circle {
+	border-radius:50% 50% 50% 50%;  
+	width:100px;
+	height:100px;
+}
+
+.eventTitle{
+	text-align: center;
+	padding-top: .1px;
+	padding-bottom: .1px;
+	width: 100%;
+	color: black;
+	font-size: 25px;
+	font-weight: bold;
+	font-variant: small-caps;
+}
+
+.eventSubtitles{
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	font-variant: small-caps;
+	background-color:#b277c9;
+}
+
+.eventInfoArea{
+	background-color:white;
+	padding-left:5px;
+	padding-right:5px;
+	width: 100%;
+}
+
+.profileBlock tr:nth-child(even){
+	background-color: #dedede;
+}
+
+.profileBlock tr:nth-child(odd){
+	background-color: #D8D8D8;
+}
