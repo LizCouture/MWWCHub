@@ -2,25 +2,19 @@ window.onload = function(){
     var data = loadDataFromJson("sampleData.json");
     var sched = document.getElementById('schedule');
     var innerHtml = "";
-    console.log("i can log something.  Anything.");
 
     //TODO: Figure out a way to do this that doesn't involve complete writing
     // all the HTML from Javascript lol
     for (var i = 0; i < data.length; i++){
         var scheduleBlock = $("<tr>", {id: '#schedBlock' + i, class: 'block shadow'});
         scheduleBlock.load("./schedule_block.html");
-        console.log("test");
         var tbody = $("#schedule").find("tbody");
-        console.log("I found a tbody!" + tbody);
-
         tbody.append(scheduleBlock);
-        /*    var liString = "<li class='scheduleTesting_item'>";
-              liString += "<div class='left_half'><p class='time'>" + data[i]['time'];
-              liString += "</p></div>";
-        // Then also add in the other pieces
-        liString += "<div class='right_half'><p>Other stuff goes here.</p></div>";
-        liString += "</li>";
-        innerHtml += liString;*/
+
+        var span = $('#schedBlock' + i).find("span.startTime");
+        console.log("Span: " + span);
+        console.log("parent: " + $('#schedBlock' + i));
+     //   $('#schedBlock' + i).find("th").find("a").find(".startTime").innerHtml = "Foo";
     }
 
 }
