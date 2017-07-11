@@ -240,10 +240,31 @@ a:visited{
 	box-shadow: 2px 2px 5px #888888;
 }
 
-.indexBottom{
-	border:5px solid;
+.indexBottom1{
+	border:3px solid;
 	border-radius:45px;
 	border-color: #9246AF;
-	background: linear-gradient(to bottom, #ffffff -7%, #cc00cc 99%);
+	background: linear-gradient(to bottom right, #ff99ff 0%, #b3f0ff 101%);
 	height: 85px;
 }
+.indexBottom2{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+    background: linear-gradient(to bottom left, #ffb3ff 0%, #ffe680 101%);
+	height: 85px;
+}
+.indexBottom3{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+    background: linear-gradient(to top right, #ffffb3 0%, #ff80ff 101%);
+	height: 85px;
+}	
+.indexBottom4{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+	background: linear-gradient(to top right, #99ff99 0%, #ff99ff 101%);
+	height: 85px;
+}	
