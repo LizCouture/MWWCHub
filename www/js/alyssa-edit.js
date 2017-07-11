@@ -1,25 +1,30 @@
-window.onload = function(){
+$(document).ready( function(){
+    // This grabs all the data for our schedule.
     var data = loadDataFromJson("sampleData.json");
-    var sched = document.getElementById('schedule');
-    var innerHtml = "";
 
-    //TODO: Figure out a way to do this that doesn't involve complete writing
-    // all the HTML from Javascript lol
-    for (var i = 0; i < data.length; i++){
-        var scheduleBlock = $("<tr>", {id: '#schedBlock' + i, class: 'block shadow'});
-        scheduleBlock.load("./schedule_block.html");
+    // For each entry, we create the block, then set all the values.
+    $.each(data, function(index, value){
+        // This creates a <tr> element with an id of
+        //   schedBlock0, schedBlock1, etc. filled with the html from
+        //   schedule_block.html
+        var scheduleBlock = $("<tr>", {id: 'schedBlock' + index, class: 'block shadow'});
+        $(scheduleBlock).load("./schedule_block.html",
+            function(){
+                //When the template loads, build it from the data.
+                populateSchedule(index,value);
+            });
+
+        // When we've built it, we attach it to tbody.
         var tbody = $("#schedule").find("tbody");
         tbody.append(scheduleBlock);
+    });
+});
 
-        var span = $('#schedBlock' + i).find("span.startTime");
-        console.log("Span: " + span);
-        console.log("parent: " + $('#schedBlock' + i));
-     //   $('#schedBlock' + i).find("th").find("a").find(".startTime").innerHtml = "Foo";
-    }
-
-}
 
 function loadDataFromJson(sampleData){
+    //TODO: In the future, this should load the info from json.
+    // For now, we'll just build the json ourselves and return it.
+
     //Loads the JSON from a file and stores it in an array
     var scheduledata = [];
     scheduledata[0] = 
@@ -39,7 +44,7 @@ function loadDataFromJson(sampleData){
         "speaker": "Rachael Rubin, Linda Townsend, Lisa Vasile, Jenna Stockwell",
         "description": "Describe this speech here."
     };
-    scheduledata[3] =
+    scheduledata[2] =
     {
         "speechTitle": "INNOVATION LEADERS - FORGING NEW MINDSETS",
         "startTime": "1:00pm",
@@ -49,4 +54,13 @@ function loadDataFromJson(sampleData){
         "description": "Describe this speech over here."
     }
     return scheduledata;
+}
+
+function populateSchedule(num, entry){
+    var name = "#schedBlock" + num;
+    $(name).find("span.startTime").text(entry["startTime"]);
+
+    //TODO: Do what we did for startTime for endTime, speechTitle, location,
+    //  and speaker here.
+        
 }
