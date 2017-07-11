@@ -15,6 +15,7 @@ body {
     margin:0px;
     padding:0px;
     width:100%;
+	overflow-x: hidden;
 	
 	
 	margin-top:30px;
@@ -216,6 +217,7 @@ a:visited{
 	font-weight: bold;
 	font-variant: small-caps;
 	background-color:#b277c9;
+	box-shadow: 2px 2px 10px #888888;
 }
 
 .eventInfoArea{
@@ -223,6 +225,7 @@ a:visited{
 	padding-left:5px;
 	padding-right:5px;
 	width: 100%;
+	box-shadow: 2px 2px 10px #888888;
 }
 
 .profileBlock tr:nth-child(even){
@@ -232,3 +235,36 @@ a:visited{
 .profileBlock tr:nth-child(odd){
 	background-color: #D8D8D8;
 }
+
+.shadow{
+	box-shadow: 2px 2px 5px #888888;
+}
+
+.indexBottom1{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+	background: linear-gradient(to bottom right, #ff99ff 0%, #b3f0ff 101%);
+	height: 85px;
+}
+.indexBottom2{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+    background: linear-gradient(to bottom left, #ffb3ff 0%, #ffe680 101%);
+	height: 85px;
+}
+.indexBottom3{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+    background: linear-gradient(to top right, #ffffb3 0%, #ff80ff 101%);
+	height: 85px;
+}	
+.indexBottom4{
+	border:3px solid;
+	border-radius:45px;
+	border-color: #9246AF;
+	background: linear-gradient(to top right, #99ff99 0%, #ff99ff 101%);
+	height: 85px;
+}	
