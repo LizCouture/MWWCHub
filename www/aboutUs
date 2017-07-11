@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> About Us </title>
+  </head>
+  <body>
+    <src="img/cutepuppies.jpg" height="175px"/>
+    <p>
+    These puppies are cute, like us!
+    </p>
+  </body>
+  </html>
