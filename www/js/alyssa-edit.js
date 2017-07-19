@@ -59,7 +59,11 @@ function loadDataFromJson(sampleData){
 function populateSchedule(num, entry){
     var name = "#schedBlock" + num;
     $(name).find("span.startTime").text(entry["startTime"]);
-
+    $(name).find("span.endTime").text(entry["endTime"]);
+    $(name).find("span.speechTitle").text(entry["speechTitle"]);
+    $(name).find("span.location").text(entry["location"]);
+    $(name).find("span.speaker").text(entry["speaker"]);
+    $(name).find("span.description").text(entry["description"]);
     //TODO: Do what we did for startTime for endTime, speechTitle, location,
     //  and speaker here.
         
