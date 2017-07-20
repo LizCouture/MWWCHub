@@ -16,6 +16,17 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+function SendFeedback() {
+
+
+    cordova.plugins.email.open({
+        to: ['michellen888@hotmail.com'],
+        subject: 'MWWC Feedback',
+        body: 'Please provide your comment:'
+    });
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -27,6 +38,19 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
+
+        console.log("Begin onDeviceReady");
+
+        $("#SendFeedback").bind("click", SendFeedback);
+
+        cordova.plugins.email.isAvailable(
+            function (isAvailable) {
+                if (!isAvailable) {
+                    alert('Service is not available');
+                }
+            }
+        );
+
         this.receivedEvent('deviceready');
     },
 
@@ -44,3 +68,4 @@ var app = {
 };
 
 app.initialize();
+

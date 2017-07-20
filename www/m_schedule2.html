@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/michelle.css">
+		<link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" src="js/handlebars-v4.0.10.min.js"></script>
+        <script type="text/javascript" src="js/schedule.js"></script>
+        <script type="text/javascript" src="js/footer2.js"></script>
+		<title>MWWC Schedule</title> 
+    </head>
+    <body class="schedule">
+	
+	<div class="header"><h1 id="ScheduleTitle">Schedule</h1></div>
+
+    <div id="scheduleRegion"></div>
+
+	<div class="footer"></div>
+
+
+    <script id="scheduleTemplate" type="text/x-handlebars-template">
+        <table id="schedule" style="border-spacing:0px 10px">
+            <tbody>
+                <!--From the JSON data loaded from scheduleData.json, foreach object in the sessions array apply this html template block: -->
+                {{#sessions}}
+                <!--Left box-->
+                <tr id="sessionRow{{sessionId}}" class="sessionRow sessionNotSelected block shadow">
+                    <th>
+                        <a class="eventLink" href="m_eventPages/m_eventTemplate.html">
+                            <span class="startTime">{{startTime}}</span>
+                            <br>
+                            <span class="endTime">{{endTime}}</span>
+                        </a>
+                    </th>
+                    <!--Right box-->
+                    <td>
+                        <div class="eventInfo">
+                            <p>
+                                <span class="bold eventTitle">{{speechTitle}}</span>
+                                <br>
+                                <span class="eventSpeaker">{{speaker}}</span>
+                                <br>
+                                <span class="eventLocation">{{location}}</span>
+                            </p>
+                        </div>
+                    </td>
+                    <td style="text-align:center; width:50px">
+                        <div class="star"><i id="sessionSelector{{sessionId}}" class="sessionSelector fa fa-star-o fa-lg"></i></div>
+                    </td>
+                </tr>
+                {{/sessions}}
+            </tbody>
+        </table>
+    </script>
+
+    </body>
+</html>
