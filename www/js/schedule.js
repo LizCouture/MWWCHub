@@ -66,3 +66,5 @@ function ShowAllSessions() {
     gShowStarredSessionsOnly = false;
     $('.sessionRow').show();
 }
+
+
