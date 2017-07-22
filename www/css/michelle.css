@@ -284,11 +284,15 @@ a:visited{
 }
 .table1{
 border-spacing:30px;
+text-align:center;
+width:100%;
+ table-layout: fixed;
+
 }
 
  .td1 {
-    border: 1px solid black;
-    padding:40px;
+    border: 10px solid black;
+    padding:50px;
 } 
 
 	
