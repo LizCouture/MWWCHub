@@ -51,7 +51,8 @@ var app = {
 app.initialize();
 
 
-
+var gLocalStorage = window.localStorage;
+var gInitializedWithLocalStorage = false;
 var gShowStarredSessionsOnly = false;
 
 
@@ -70,6 +71,7 @@ $(document).ready(function () {
 
     $(document).on("click", ".sessionSelector", SessionSelectorClicked);
     $(document).on("click", ".viewNavigator", ShowView);
+
 });
 
 
@@ -84,10 +86,19 @@ function SessionSelectorClicked() {
     var sessionRow = $("#" + sessionRowId);
     console.log("sessionRowId = " + sessionRowId);
 
-    // If already selected then unselect it.
+    // If already selected then deselect it.
     if (star.hasClass('StarSelected')) {
-        // Do unselect
+        // Do deselect
         star.attr('class', 'sessionSelector fa fa-star-o fa-lg');
+
+        var storedSessionId = gLocalStorage.getItem(sessionSelectorId);
+        //If the key is there, remove it.
+        if (storedSessionId != null) {
+            gLocalStorage.removeItem(sessionSelectorId);
+        }
+
+
+
         if (!sessionRow.hasClass('sessionNotSelected')) {
             sessionRow.addClass('sessionNotSelected');
             if (gShowStarredSessionsOnly) {
@@ -95,9 +106,17 @@ function SessionSelectorClicked() {
             }
         }        
     } else {
-        // Do selected
+        // Do select
         star.attr('class', 'StarSelected sessionSelector fa fa-star fa-lg');
         star.attr('style', 'color:forestgreen');
+
+        var storedSessionId = gLocalStorage.getItem(sessionSelectorId);
+        //If the key is not set, track it.
+        if (storedSessionId == null) {
+            gLocalStorage.setItem(sessionSelectorId, sessionSelectorId);
+        }
+
+
         if (sessionRow.hasClass('sessionNotSelected')) {
             sessionRow.removeClass('sessionNotSelected');
         }
@@ -105,6 +124,21 @@ function SessionSelectorClicked() {
 
 } 
 
+function selectSessionSelector(sessionSelectorId) {
+
+    var star = $("#" + sessionSelectorId);
+    var rawId = sessionSelectorId.replace("sessionSelector", "");
+    var sessionRowId = "sessionRow" + rawId;
+    var sessionRow = $("#" + sessionRowId);
+
+    // Do select
+    star.attr('class', 'StarSelected sessionSelector fa fa-star fa-lg');
+    star.attr('style', 'color:forestgreen');
+
+    if (sessionRow.hasClass('sessionNotSelected')) {
+        sessionRow.removeClass('sessionNotSelected');
+    }
+}
 
 function ShowStarredSessions() {
     console.log("ShowStarredSessionsClicked");
@@ -126,6 +160,17 @@ function ShowView() {
 
 
     if (targetView == "schedView") {
+        if (gInitializedWithLocalStorage == false) {
+            //Loads stored selectedIds to highlight the UI
+            for (i = 0; i < gLocalStorage.length; i++) {
+                var key = gLocalStorage.key(i);
+
+                if (key.indexOf("sessionSelector") >= 0) {
+                    selectSessionSelector(key);
+                }
+            }
+            gInitializedWithLocalStorage = true;
+        }
         var filterMode = $(this).attr("filterMode");
 
         if (filterMode == "starred") {
