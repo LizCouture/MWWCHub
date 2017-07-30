@@ -18,6 +18,23 @@
  */
 
 
+var gSurveyWebPageUrl = "https://goo.gl/forms/sv0fOr4uRf8v1z0A3"
+
+var gLocalStorage = window.localStorage;
+var gInitializedWithLocalStorage = false;
+
+var gHomeViewTitle = "MetroWest Conference For Women";
+
+var gActiveView = "homeView";
+var gActiveGoBackTitle = "Home";
+var gIsGoingBackToActiveView = false;
+
+var gIsShowStarredSessionsOnly = false;
+
+var gCompliedSessionDetailTemplate = null;
+var gSpeakers = null;
+
+
 var app = {
     // Application Constructor
     initialize: function () {
@@ -25,106 +42,191 @@ var app = {
     },
 
     // deviceready Event Handler
-    //
-    // Bind any cordova events here. Common events are:
-    // 'pause', 'resume', etc.
     onDeviceReady: function () {
 
-        console.log("Begin onDeviceReady");
+        console.log("onDeviceReady begin");
 
-        this.receivedEvent('deviceready');
-    },
+        if (!window.device) {
+            window.device = { platform: 'Browser' };
+        }
 
-    // Update DOM on a Received Event
-    receivedEvent: function (id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+        $.getJSON("data/schedule.json", function (data) {
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+            var schedTemplate = $("#scheduleTemplate").html();
+            var compliedSchedTemplate = Handlebars.compile(schedTemplate);
+            var generatedHTML = compliedSchedTemplate(data);
+            $("#scheduleRegion").append(generatedHTML);
 
-        console.log('Received Event: ' + id);
+        }).fail(function (jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.log("Get schedule data failed: " + err);
+            });
+
+
+        $.getJSON("data/speakers.json", function (data) {
+            gSpeakers = data.speakers;
+
+            //$(gSpeakers).each(function () {
+            //    this.show = true;
+            //    this.visible = false;
+            //});
+
+        }).fail(function (jqxhr, textStatus, error) {
+            var err = textStatus + ", " + error;
+            console.log("Get speakers data failed: " + err);
+            });
+
+        console.log("Start preparing the session detail UI template to be bind with a selected session.");
+
+        var sessionDetailTemplate = $("#sessionDetailTemplate").html();
+        gCompliedSessionDetailTemplate = Handlebars.compile(sessionDetailTemplate);
+
+        console.log("Completed preparing the session detail UI template.");
+
+
+        $(document).on("click", ".sessionSelector", SessionSelectorClicked);
+        $(document).on("click", ".viewNavigator", ShowView);
+        $(document).on("click", ".eventInfo", ShowSessionDetail);
+        $(document).on("click", "#overviewNavigator", ShowOverview);
+        $(document).on("click", "#goBackNavigator", GoBackClicked);
+
+        $("#loadingStatus").hide();
+        $("#navigationPanel").show();
+
+        console.log("onDeviceReady Completed");
     }
 };
 
 app.initialize();
 
 
-var gLocalStorage = window.localStorage;
-var gInitializedWithLocalStorage = false;
-var gShowStarredSessionsOnly = false;
 
+function ShowView() {
+    console.log("ShowView begin");
 
-$(document).ready(function () {
+    var targetView = null;
 
-    console.log("Start Init");
+    if (gIsGoingBackToActiveView) {
+        targetView = gActiveView;
+        gIsGoingBackToActiveView = false;
+    } else {
+        targetView = $(this).attr("destinationView");
+    }
+    var targetViewEle = $("#" + targetView);
+    gActiveView = targetView;
 
-    $.getJSON("scheduleData.json", function (data) {
+    if (targetView === "surveyView") {
 
-        var template = $("#scheduleTemplate").html();
-        var compliedTemplate = Handlebars.compile(template);
-        var generatedHTML = compliedTemplate(data);
-        $("#scheduleRegion").append(generatedHTML);
+        if (device.platform.toUpperCase() === 'IOS' || device.platform.toUpperCase() === 'BROWSER') {
+            window.open(gSurveyWebPageUrl, '_system');
+        } else if (device.platform.toUpperCase() === 'ANDROID') {
+            navigator.app.loadUrl(gSurveyWebPageUrl, { openExternal: true });
+        }
+        return;
+    }
 
+    if (targetView === "schedView") {
+
+        if (gInitializedWithLocalStorage === false) {
+            //Loads stored selected session IDs to restore selected session in the schedule
+            for (i = 0; i < gLocalStorage.length; i++) {
+                var key = gLocalStorage.key(i);
+                if (key.indexOf("sessionSelector") >= 0) {
+                    SelectSessionSelector(key);
+                }
+            }
+            gInitializedWithLocalStorage = true;
+        }
+
+        var filterMode = $(this).attr("filterMode");
+        console.log("The schedView's filterMode is " + filterMode);
+
+        if (filterMode === "starred") {
+            ShowStarredSessionsOnly();
+        } else {
+            ShowAllSessions();
+        }
+    } else {
+        var title = targetViewEle.attr("pageViewTitle");
+        gActiveGoBackTitle = title;
+        $("#viewTitle").html(title);
+    }
+
+    if (targetView === "homeView") {
+        gActiveGoBackTitle = "Home";
+    }
+
+    $(".pageView").each(function () {
+        $(this).hide();
     });
 
-    $(document).on("click", ".sessionSelector", SessionSelectorClicked);
-    $(document).on("click", ".viewNavigator", ShowView);
+    targetViewEle.show();
+    $(".footer").show();
+    $("#goBackNavigator").hide();
 
-});
+    console.log("ShowView completed");
+}
+
 
 
 function SessionSelectorClicked() {
     // The this variable is the selected html element (the Star that got clicked on)
     var sessionSelectorId = $(this).attr('id');
-    console.log("Begin SessionSelectorClicked. sessionSelectorId = " + sessionSelectorId);
+    console.log("SessionSelectorClicked begin. sessionSelectorId = " + sessionSelectorId);
 
-    var star = $("#" + sessionSelectorId);
+    var star = $(this);
     var rawId = sessionSelectorId.replace("sessionSelector", "");
     var sessionRowId = "sessionRow" + rawId;
     var sessionRow = $("#" + sessionRowId);
     console.log("sessionRowId = " + sessionRowId);
 
+    var storedSessionId = null;
+
     // If already selected then deselect it.
     if (star.hasClass('StarSelected')) {
         // Do deselect
+        console.log("In SessionSelectorClicked - Do deselect begin");
         star.attr('class', 'sessionSelector fa fa-star-o fa-lg');
 
-        var storedSessionId = gLocalStorage.getItem(sessionSelectorId);
+        storedSessionId = gLocalStorage.getItem(sessionSelectorId);
         //If the key is there, remove it.
-        if (storedSessionId != null) {
+        if (storedSessionId !== null) {
             gLocalStorage.removeItem(sessionSelectorId);
+            console.log("In SessionSelectorClicked - Remove sessionSelectorId from storage: " + sessionSelectorId);
         }
-
-
 
         if (!sessionRow.hasClass('sessionNotSelected')) {
             sessionRow.addClass('sessionNotSelected');
-            if (gShowStarredSessionsOnly) {
-                ShowStarredSessions();
+            if (gIsShowStarredSessionsOnly) {
+                ShowStarredSessionsOnly();
             }
-        }        
+        } 
+        console.log("In SessionSelectorClicked - Do deselect completed");
     } else {
         // Do select
+        console.log("In SessionSelectorClicked - Do select begin");
+
         star.attr('class', 'StarSelected sessionSelector fa fa-star fa-lg');
         star.attr('style', 'color:forestgreen');
 
-        var storedSessionId = gLocalStorage.getItem(sessionSelectorId);
+        storedSessionId = gLocalStorage.getItem(sessionSelectorId);
         //If the key is not set, track it.
-        if (storedSessionId == null) {
+        if (storedSessionId === null) {
             gLocalStorage.setItem(sessionSelectorId, sessionSelectorId);
         }
-
 
         if (sessionRow.hasClass('sessionNotSelected')) {
             sessionRow.removeClass('sessionNotSelected');
         }
+        console.log("In SessionSelectorClicked - Do select completed");
     }
 
+    console.log("SessionSelectorClicked completed");
 } 
 
-function selectSessionSelector(sessionSelectorId) {
+
+function SelectSessionSelector(sessionSelectorId) {
+    console.log("SelectSessionSelector begin");
 
     var star = $("#" + sessionSelectorId);
     var rawId = sessionSelectorId.replace("sessionSelector", "");
@@ -138,58 +240,98 @@ function selectSessionSelector(sessionSelectorId) {
     if (sessionRow.hasClass('sessionNotSelected')) {
         sessionRow.removeClass('sessionNotSelected');
     }
+
+    console.log("SelectSessionSelector completed");
 }
 
-function ShowStarredSessions() {
-    console.log("ShowStarredSessionsClicked");
-    gShowStarredSessionsOnly = true;
+
+function ShowStarredSessionsOnly() {
+    console.log("ShowStarredSessionsOnly begin");
+
+    gIsShowStarredSessionsOnly = true;
+    gActiveGoBackTitle = "Starred";
     $('#viewTitle').html('Starred');
-    $('.sessionNotSelected').hide();
+    $('.sessionNotSelected').fadeOut(300);
+
+    console.log("ShowStarredSessionsOnly completed");
 }
+
 
 function ShowAllSessions() {
-    console.log("ShowAllSessionsClicked");
+    console.log("ShowAllSessions begin");
+
+    gActiveGoBackTitle = "Schedule";
     $('#viewTitle').html('Schedule');
-    gShowStarredSessionsOnly = false;
+    gIsShowStarredSessionsOnly = false;
     $('.sessionRow').show();
+
+    console.log("ShowAllSessions completed");
 }
 
-function ShowView() {
-    var targetView = $(this).attr("destinationView");
-    var targetViewEle = $("#" + targetView);
 
-
-    if (targetView == "schedView") {
-        if (gInitializedWithLocalStorage == false) {
-            //Loads stored selectedIds to highlight the UI
-            for (i = 0; i < gLocalStorage.length; i++) {
-                var key = gLocalStorage.key(i);
-
-                if (key.indexOf("sessionSelector") >= 0) {
-                    selectSessionSelector(key);
-                }
-            }
-            gInitializedWithLocalStorage = true;
-        }
-        var filterMode = $(this).attr("filterMode");
-
-        if (filterMode == "starred") {
-            ShowStarredSessions();
-        } else {
-            ShowAllSessions();
-        }
-    } else {
-        var title = targetViewEle.attr("pageViewTitle");
-        $('#viewTitle').html(title);
-    }
-
+function ShowSessionDetail() {
+    console.log("ShowSessionDetail begin");
 
     $(".pageView").each(function () {
         $(this).hide();
     });
 
+    $("#goBackLabel").html(gActiveGoBackTitle);
+    $("#goBackNavigator").show();
+
+    var targetViewEle = $("#sessionDetailModalView");
+
+    var title = targetViewEle.attr("pageViewTitle");
+    $("#viewTitle").html(title);
+
+    var sessionDetail = {};
+    sessionDetail.startTime = "9:00 AM";
+    sessionDetail.endTime = "10:00 AM";
+    sessionDetail.speechTitle = "A Healthy You - The Foundation of Success";
+    sessionDetail.speaker = "Sandra Harmon, RN, MSN, Rachael Rubin, Linda Townsend, Lisa Vasile, NP";
+    sessionDetail.location = "Room 240";
+    sessionDetail.speakerInfoItems = gSpeakers;
+
+    var generatedHTML = gCompliedSessionDetailTemplate(sessionDetail);
+    $("#sessionDetailRegion").html(generatedHTML);
+
+    sessionDetail = null;
+
+    $(".footer").hide();
     targetViewEle.show();
 
-   
+    console.log("ShowSessionDetail completed");
 }
+
+
+function ShowOverview() {
+    console.log("ShowOverview begin");
+
+    $(".pageView").each(function () {
+        $(this).hide();
+    });
+
+    var targetViewEle = $("#overviewModalView");
+
+    var title = targetViewEle.attr("pageViewTitle");
+    $("#viewTitle").html(title);
+
+    $("#goBackLabel").html(gActiveGoBackTitle);
+    $("#goBackNavigator").show();
+
+    $("#overviewRegion").load("data/overview.html #overviewContent"); 
+
+    $(".footer").hide();
+    targetViewEle.show();
+
+    console.log("ShowOverview completed");
+}
+
+
+function GoBackClicked() {
+    gIsGoingBackToActiveView = true;
+    $(window).scrollTop(0);
+    ShowView();
+}
+
 

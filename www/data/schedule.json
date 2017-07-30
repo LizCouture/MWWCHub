@@ -1,0 +1,104 @@
+{
+  "sessions": [
+
+    {
+      "sessionId": "1010",
+      "speechTitle": "keynote",
+      "startTime": "9:00am",
+      "endTime": "10:00am",
+      "location": "Room 100",
+      "speaker": "Nicole Sahin, Dr. Patti Fletcher, Maria Marlowe, Liz O'Donnell, Stephanie Leydon",
+      "description": "This is where you would put the description for this Keynote."
+    },
+
+    {
+      "sessionId": "1020",
+      "speechTitle": "A Healthy You - The Foundation of Success",
+      "startTime": "1:00pm",
+      "endTime": "2:00pm",
+      "location": "Room 312",
+      "speaker": "Sandra Harmon, RN, MSN, Rachael Rubin, Linda Townsend, Lisa Vasile, NP",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1030",
+      "speechTitle": "Innovation Leaders - Forging New Mindsets",
+      "startTime": "1:00pm",
+      "endTime": "2:00pm",
+      "location": "Room 210",
+      "speaker": "Bobbie Carlton, Carol Fishman Cohen, Ilyssa Greene Frey, Cheryl Kiser",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1040",
+      "speechTitle": "Colorful Women Leading The Way",
+      "startTime": "9:00am",
+      "endTime": "10:00am",
+      "location": "Room 202",
+      "speaker": "Enna Jimenez, Roxann Cooke, Maria Salomao-Schmidt, Sylvia Ramirez",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1050",
+      "speechTitle": "Taking the Left Turn: Tips for career transitions at any stage",
+      "startTime": "1:00pm",
+      "endTime": "2:00pm",
+      "location": "Room 100",
+      "speaker": "Dana Neshe, Nancy Cantor, Bonnie Biocchi, Cheryl Cronin, Helen Lemoine",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1060",
+      "speechTitle": "Own Your Money, Own Your Worth",
+      "startTime": "2:00pm",
+      "endTime": "3:00pm",
+      "location": "Room 218",
+      "speaker": "Belinda Rosenblum, Marie Paturzo, Clemia Brittenum, Tobi Russell",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1070",
+      "speechTitle": "From Vision to Business to Brand",
+      "startTime": "2:00pm",
+      "endTime": "3:00pm",
+      "location": "Room 200",
+      "speaker": "Katelin Cwieka, Kristina Tsipouras, Kristina Burkey, Rachel Dunham",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1080",
+      "speechTitle": "Have the Relationships You Deserve",
+      "startTime": "3:00pm",
+      "endTime": "4:00pm",
+      "location": "Room 201",
+      "speaker": "Catherine Hummel, Deanna Coyle, Samantha Burns, Dr. Susan Trotter",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1090",
+      "speechTitle": "Empowering Girls, Building Futures",
+      "startTime": "3:00pm",
+      "endTime": "4:00pm",
+      "location": "Room 300",
+      "speaker": "Erin Mahoney, Kenetra Hinkins, Colleen Phelps, Michelle Cove",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    },
+
+    {
+      "sessionId": "1100",
+      "speechTitle": "Cutting Through the Bullsh*t: Move Away From Self-sabotage & Step into Your Power",
+      "startTime": "3:00pm",
+      "endTime": "4:00pm",
+      "location": "Room 420",
+      "speaker": "Michelle Mercier, Mal Duane, Chantel Bethea, Gayle Suzanne",
+      "description": "This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description. This is where you would put the session description."
+    }
+  ]
+}
