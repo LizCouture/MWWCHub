@@ -16,12 +16,8 @@
     <div class="goBackNavigator" id="goBackNavigator" style="display:none;"><img src="css/images/icons-png/carat-l-white.png" /><a id="goBackLabel" ></a></div>
 
     <div id="homeView" pageViewTitle="MetroWest Conference For Women" class="pageView">
-        <div class="indextop">
-            <table style="width:100%; text-align:center">
-                <tr>
-                    <td><img src="img/logooo.png" height="175" /></td>
-                </tr>
-            </table>
+        <div id="homeLogo" class="indextop" style="display:none; text-align:center">
+            <img src="img/logooo.png" height="175"/>
         </div>
 
         <div id="loadingStatus">
@@ -34,14 +30,63 @@
 
         <div id="navigationPanel" style="display:none;">
             <table style="width: 100%; text-align:center">
-                <tr>
-                    <td class="indexBottom1"><a id="overviewNavigator"><i class="fa fa-home fa-3x fa-fw" style="color:#660066;"></i></a></td>
+
+                <!--2 column buttons-->
+                <!--<tr>
+                    <td class="indexBottom1"><a id="overviewNavigator"><i class="fa fa-info-circle fa-3x fa-fw" style="color:#660066;"></i></a></td>
                     <td class="indexBottom2"><a destinationView="schedView" class="viewNavigator" filterMode="none" ><i class="fa fa-calendar fa-3x fa-fw" style="color:#003366;"></i></a></td>
                 </tr>
                 <tr>
                     <td class="indexBottom3"><a destinationView="schedView" class="viewNavigator" filterMode="starred"><i class="fa fa-calendar-plus-o fa-3x fa-fw" style="color:#660029;"></i></a></td>
                     <td class="indexBottom4"><a destinationView="surveyView" class="viewNavigator"><i class="fa fa-comments-o fa-3x fa-fw" style="color:#004d00;"></i></a></td>
                 </tr>
+                <tr>
+                    <td class="indexBottom5"><a href="aboutUs.html"><i class="fa fa-users fa-3x fa-fw" style="color:#800033;"></a></td>
+                    <td class="indexBottom6"><a href="exhibitors.html"><i class="fa fa-id-card-o fa-3x fa-fw" style="color:#330014;"></a></td>
+                </tr>-->
+                
+
+                <!--1 column buttons-->
+                <div>
+                    <tr>
+                        <td class="indexBottom1"><a id="overviewNavigator"><i class="fa fa-info-circle fa-2x fa-fw" style="color:#660066;"></i></a>
+                        Overview
+                        </td>  
+                    </tr>
+                    <tr>
+                        <td class="indexBottom2"><a destinationView="schedView" class="viewNavigator" filterMode="none"><i class="fa fa-calendar fa-2x fa-fw" style="color:#003366;"></i></a>
+                        Schedule
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexBottom3"><a destinationView="schedView" class="viewNavigator" filterMode="starred"><i class="fa fa-calendar-plus-o fa-2x fa-fw" style="color:#660029;"></i></a>
+                        Starred
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexBottom4"><a destinationView="surveyView" class="viewNavigator"><i class="fa fa-comments-o fa-2x fa-fw" style="color:#004d00;"></i></a>
+                        Survey
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexBottom6"><a href="exhibitors.html"><i class="fa fa-id-card-o fa-2x fa-fw" style="color:#330014;"></i></a>
+                        Exhibitors
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexBottom6">
+                            <a href="exhibitors.html"><i class="fa fa-id-card-o fa-2x fa-fw" style="color:#330014;"></i></a>
+                            Sponsors
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="indexBottom5">
+                            <a href="aboutUs.html"><i class="fa fa-users fa-2x fa-fw" style="color:#800033;"></i></a>
+                            About Us
+                        </td>
+                    </tr>
+                </div>
+
             </table>
         </div>
     </div>
@@ -58,7 +103,7 @@
         <div id="sessionDetailRegion">Session Detail Region</div>
     </div>
 
-	<div id="footer" class="footer">
+	<div id="footer" class="footer" style="display:none;"> 
         <table style="text-align:center; width:100%">
             <td><a destinationView="homeView" class="viewNavigator"><i class="fa fa-home fa-2x fa-fw"></i></a></td>
             <td><a destinationView="schedView" filterMode="none" class="viewNavigator"><i class="fa fa-calendar fa-2x fa-fw"></i></a></td>
@@ -76,7 +121,7 @@
                 <tr id="sessionRow{{sessionId}}" class="sessionRow sessionNotSelected block shadow">
                     <!--Left box-->
                     <th>
-                        <a class="eventLink">
+                        <a class="eventTime sessionDetailNavigator">
                             <span class="startTime">{{startTime}}</span>
                             <br>
                             <span class="endTime">{{endTime}}</span>
@@ -84,7 +129,7 @@
                     </th>
                     <!--Right box-->
                     <td>
-                        <div class="eventInfo">
+                        <div class="eventInfo sessionDetailNavigator">
                             <p>
                                 <span class="bold eventTitle">{{speechTitle}}</span>
                                 <br>
@@ -110,7 +155,7 @@
                 <tr class="block shadow">
                     <!--Left box-->
                     <th>
-                        <a class="eventLink">
+                        <a class="eventTime">
                             <span class="startTime">{{startTime}}</span>
                             <br>
                             <span class="endTime">{{endTime}}</span>

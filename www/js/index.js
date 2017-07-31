@@ -23,7 +23,7 @@ var gSurveyWebPageUrl = "https://goo.gl/forms/sv0fOr4uRf8v1z0A3"
 var gLocalStorage = window.localStorage;
 var gInitializedWithLocalStorage = false;
 
-var gHomeViewTitle = "MetroWest Conference For Women";
+//var gHomeViewTitle = "MetroWest Conference For Women";
 
 var gActiveView = "homeView";
 var gActiveGoBackTitle = "Home";
@@ -66,11 +66,6 @@ var app = {
         $.getJSON("data/speakers.json", function (data) {
             gSpeakers = data.speakers;
 
-            //$(gSpeakers).each(function () {
-            //    this.show = true;
-            //    this.visible = false;
-            //});
-
         }).fail(function (jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
             console.log("Get speakers data failed: " + err);
@@ -86,12 +81,14 @@ var app = {
 
         $(document).on("click", ".sessionSelector", SessionSelectorClicked);
         $(document).on("click", ".viewNavigator", ShowView);
-        $(document).on("click", ".eventInfo", ShowSessionDetail);
+        $(document).on("click", ".sessionDetailNavigator", ShowSessionDetail);
         $(document).on("click", "#overviewNavigator", ShowOverview);
         $(document).on("click", "#goBackNavigator", GoBackClicked);
 
         $("#loadingStatus").hide();
-        $("#navigationPanel").show();
+        $("#navigationPanel").fadeIn(300);
+        $("#homeLogo").fadeIn(300);
+        $("#footer").slideDown(300);
 
         console.log("onDeviceReady Completed");
     }
@@ -116,6 +113,7 @@ function ShowView() {
     gActiveView = targetView;
 
     if (targetView === "surveyView") {
+        //To do: replace this with email.
 
         if (device.platform.toUpperCase() === 'IOS' || device.platform.toUpperCase() === 'BROWSER') {
             window.open(gSurveyWebPageUrl, '_system');
@@ -263,7 +261,7 @@ function ShowAllSessions() {
     gActiveGoBackTitle = "Schedule";
     $('#viewTitle').html('Schedule');
     gIsShowStarredSessionsOnly = false;
-    $('.sessionRow').show();
+    $('.sessionRow').fadeIn(300);
 
     console.log("ShowAllSessions completed");
 }
@@ -284,12 +282,44 @@ function ShowSessionDetail() {
     var title = targetViewEle.attr("pageViewTitle");
     $("#viewTitle").html(title);
 
+    var sessionRow = $(this).parents(".sessionRow");
+    var sessionRowId = sessionRow.attr("id");
+
+    //Retrieve and set the time.
+    var startTimeEle = $("#" + sessionRowId + " th a span").filter(".startTime");
+    var startTime = $(startTimeEle).html();
+    var endTimeEle = $("#" + sessionRowId + " th a span").filter(".endTime");
+    var endTime = $(endTimeEle).html();
+
     var sessionDetail = {};
-    sessionDetail.startTime = "9:00 AM";
-    sessionDetail.endTime = "10:00 AM";
-    sessionDetail.speechTitle = "A Healthy You - The Foundation of Success";
-    sessionDetail.speaker = "Sandra Harmon, RN, MSN, Rachael Rubin, Linda Townsend, Lisa Vasile, NP";
-    sessionDetail.location = "Room 240";
+    sessionDetail.startTime = startTime;
+    sessionDetail.endTime = endTime;
+
+    //Retrieve and set the speech title.
+    var speechTitleEle = $("#" + sessionRowId + " td div p span").filter(".eventTitle");
+    var speechTitle = $(speechTitleEle).html();
+    sessionDetail.speechTitle = speechTitle;
+ 
+    //sessionDetail.speaker = "Sandra Harmon, RN, MSN, Rachael Rubin, Linda Townsend, Lisa Vasile, NP";
+
+    //Retrieve and set the location.
+    var locationEle = $("#" + sessionRowId + " td div p span").filter(".eventLocation");
+    var location = $(locationEle).html();
+    sessionDetail.location = location;
+
+
+    var speakerEle = $("#" + sessionRowId + " td div p span").filter(".eventSpeaker");
+    var speakersToBeMatched = $(speakerEle).html();
+
+    $(gSpeakers).each(function (index) {
+        var speaker = this.name;
+        if (speakersToBeMatched.indexOf(speaker) >= 0) {
+            this.show = true;
+        } else {
+            this.show = false;
+        }
+    });
+
     sessionDetail.speakerInfoItems = gSpeakers;
 
     var generatedHTML = gCompliedSessionDetailTemplate(sessionDetail);

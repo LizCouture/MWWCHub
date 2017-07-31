@@ -217,6 +217,7 @@ a:visited{
 	color: black;
 	list-style-type: none;
 	padding: 5px;
+    font-size: 12px;
 	
 }
 
@@ -226,13 +227,18 @@ a:visited{
 	height:100px;
 }
 
+.eventTime {
+    color: white;
+    font-variant: small-caps;
+}
+
 .eventTitle{
 	text-align: center;
 	padding-top: .1px;
 	padding-bottom: .1px;
 	width: 100%;
 	color: black;
-	font-size: 25px;
+	font-size: 15px;
 	font-weight: bold;
 	font-variant: small-caps;
 }
@@ -291,27 +297,42 @@ a:visited{
 	border-radius:45px;
 	border-color: #9246AF;
 	background: linear-gradient(to bottom right, #ff99ff 0%, #b3f0ff 101%);
-	height: 85px;
+	height: 50px;
 }
-.indexBottom2{
-	border:3px solid;
-	border-radius:45px;
-	border-color: #9246AF;
+.indexBottom2 {
+    border: 3px solid;
+    border-radius: 45px;
+    border-color: #9246AF;
     background: linear-gradient(to bottom left, #ffb3ff 0%, #ffe680 101%);
-	height: 85px;
+    height: 50px;
 }
-.indexBottom3{
-	border:3px solid;
-	border-radius:45px;
-	border-color: #9246AF;
+.indexBottom3 {
+    border: 3px solid;
+    border-radius: 45px;
+    border-color: #9246AF;
     background: linear-gradient(to top right, #ffffb3 0%, #ff80ff 101%);
-	height: 85px;
-}	
-.indexBottom4{
-	border:3px solid;
-	border-radius:45px;
-	border-color: #9246AF;
-	background: linear-gradient(to top right, #99ff99 0%, #ff99ff 101%);
-	height: 85px;
+    height: 50px;
+}
+.indexBottom4 {
+    border: 3px solid;
+    border-radius: 45px;
+    border-color: #9246AF;
+    background: linear-gradient(to top right, #99ff99 0%, #ff99ff 101%);
+    height: 50px;
 }
 
+.indexBottom5 {
+    border: 3px solid;
+    border-radius: 45px;
+    border-color: #9246AF;
+    background: linear-gradient(to bottom, #b3b3ff 0%, #ffcce6 100%);
+    height: 50px;
+}
+
+.indexBottom6 {
+    border: 3px solid;
+    border-radius: 45px;
+    border-color: #9246AF;
+    background: linear-gradient(to bottom left, #b3ff99 0%, #ffff99 100%);
+    height: 50px;
+}
