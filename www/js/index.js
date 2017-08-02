@@ -18,13 +18,21 @@
  */
 
 
-var gSurveyWebPageUrl = "https://goo.gl/forms/sv0fOr4uRf8v1z0A3"
+var gSurveyReceiver = "jenmaseda@metrowestconferenceforwomen.com";
+var gSurveyEmailSubject = "Feedback";
+var gSurveyEmailBody = "Please provide your feedback:";
+var gSurveyHref = "mailto:" + gSurveyReceiver + "?subject=" + gSurveyEmailSubject + "&body=" + gSurveyEmailBody;
+
+// Currently not using a Survey Google Feedback form.
+//var gSurveyWebPageUrl = "https://goo.gl/forms/sv0fOr4uRf8v1z0A3"
 
 var gLocalStorage = window.localStorage;
 var gInitializedWithLocalStorage = false;
 
+var gOverviewLoaded = false;
 var gExhibitorsLoaded = false;
 var gSponsorsLoaded = false;
+var gAboutUsLoaded = false;
 
 var gActiveView = "homeView";
 var gActiveGoBackTitle = "Home";
@@ -34,6 +42,9 @@ var gIsShowStarredSessionsOnly = false;
 
 var gCompliedSessionDetailTemplate = null;
 var gSpeakers = null;
+
+
+
 
 
 var app = {
@@ -51,11 +62,14 @@ var app = {
             window.device = { platform: 'Browser' };
         }
 
-        $.getJSON("data/schedule.json", function (data) {
+        Handlebars.registerHelper('GetLocalTimeLabel', GetLocalTimeFromUtcDateTimeString);
 
+        $.getJSON("data/schedule.json", function (data) {
+            var jsonRoot = {};
+            jsonRoot.sessions = data;
             var schedTemplate = $("#scheduleTemplate").html();
             var compliedSchedTemplate = Handlebars.compile(schedTemplate);
-            var generatedHTML = compliedSchedTemplate(data);
+            var generatedHTML = compliedSchedTemplate(jsonRoot);
             $("#scheduleRegion").append(generatedHTML);
 
         }).fail(function (jqxhr, textStatus, error) {
@@ -65,7 +79,7 @@ var app = {
 
 
         $.getJSON("data/speakers.json", function (data) {
-            gSpeakers = data.speakers;
+            gSpeakers = data;
 
         }).fail(function (jqxhr, textStatus, error) {
             var err = textStatus + ", " + error;
@@ -88,6 +102,8 @@ var app = {
         $(document).on("click", "#goBackNavigator", GoBackClicked);
         $(document).on("click", "#exhibitorsNavigator", ShowExhibitors);
         $(document).on("click", "#sponsorsNavigator", ShowSponsors);
+
+        $("#launchEmailClientForSurvey").attr("href", gSurveyHref);
 
         $("#loadingStatus").hide();
         $("#navigationPanel").fadeIn(300);
@@ -115,16 +131,25 @@ function ShowView() {
         targetView = $(this).attr("destinationView");
     }
     var targetViewEle = $("#" + targetView);
-    gActiveView = targetView;
+
+    if (targetView !== "surveyView") {
+        gActiveView = targetView;
+    }
 
     if (targetView === "surveyView") {
-        //To do: replace this with email.
 
         if (device.platform.toUpperCase() === 'IOS' || device.platform.toUpperCase() === 'BROWSER') {
-            window.open(gSurveyWebPageUrl, '_system');
+            window.open(gSurveyHref);
         } else if (device.platform.toUpperCase() === 'ANDROID') {
-            navigator.app.loadUrl(gSurveyWebPageUrl, { openExternal: true });
+            navigator.app.loadUrl(gSurveyHref);
         }
+
+        //Not used at this point. The Survey link uses mailto: in the href.
+        //if (device.platform.toUpperCase() === 'IOS' || device.platform.toUpperCase() === 'BROWSER') {
+        //    window.open(gSurveyWebPageUrl, '_system');
+        //} else if (device.platform.toUpperCase() === 'ANDROID') {
+        //    navigator.app.loadUrl(gSurveyWebPageUrl, { openExternal: true });
+        //}
         return;
     }
 
@@ -405,10 +430,11 @@ function ShowExhibitors() {
     if (gExhibitorsLoaded === false) {
 
         $.getJSON("data/exhibitors.json", function (data) {
-
+            var jsonRoot = {};
+            jsonRoot.exhibitors = data;
             var exhTemplate = $("#exhibitorsTemplate").html();
             var compliedExhTemplate = Handlebars.compile(exhTemplate);
-            var generatedHTML = compliedExhTemplate(data);
+            var generatedHTML = compliedExhTemplate(jsonRoot);
             $("#exhibitorsRegion").append(generatedHTML);
 
         }).fail(function (jqxhr, textStatus, error) {
@@ -441,10 +467,11 @@ function ShowSponsors() {
     if (gSponsorsLoaded === false) {
 
         $.getJSON("data/sponsors.json", function (data) {
-
+            var jsonRoot = {};
+            jsonRoot.sponsors = data;
             var spTemplate = $("#sponsorsTemplate").html();
             var compliedSpTemplate = Handlebars.compile(spTemplate);
-            var generatedHTML = compliedSpTemplate(data);
+            var generatedHTML = compliedSpTemplate(jsonRoot);
             $("#sponsorsRegion").append(generatedHTML);
 
         }).fail(function (jqxhr, textStatus, error) {
@@ -464,5 +491,23 @@ function GoBackClicked() {
     $(window).scrollTop(0);
     ShowView();
 }
+
+
+function GetLocalTimeFromUtcDateTimeString(utcDateTimeInString) {
+    // for example, "1899-12-30T14:45:00.000Z" is 2:45 PM UTC and 9:45 AM is Eastern Standard Time.
+    var timeTicks = Date.parse(utcDateTimeInString);
+    var date = new Date(timeTicks);
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    // The hour '0' should be '12'
+    hours = hours ? hours : 12;
+    // Prefix with a 0 if less than 10
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+}
+
 
 

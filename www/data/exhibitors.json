@@ -1,25 +1,22 @@
-{
-  "exhibitors": [
-
-    {
-      "name": "Diosa Dance Yoga Health, Inc.",
-      "sponsorType": "Platinum Sponsor"
-    },
-    {
-      "name": "sponsor2",
-      "sponsorType": "Platinum Sponsor"
-    },
-    {
-      "name": "sponsor3",
-      "sponsorType": "Platinum Sponsor"
-    },
-    {
-      "name": "sponsor4",
-      "sponsorType": "Platinum Sponsor"
-    },
-    {
-      "name": "sponsor5",
-      "sponsorType": "Platinum Sponsor"
-    }
-  ]
-}
+[
+  {
+    "name": "Diosa Dance Yoga Health, Inc.",
+    "sponsortype": "Platinum Sponsor"
+  },
+  {
+    "name": "sponsor2",
+    "sponsortype": "Platinum Sponsor"
+  },
+  {
+    "name": "sponsor3",
+    "sponsortype": "Platinum Sponsor"
+  },
+  {
+    "name": "sponsor4",
+    "sponsortype": "Platinum Sponsor"
+  },
+  {
+    "name": "sponsor5",
+    "sponsortype": "Platinum Sponsor"
+  }
+]
