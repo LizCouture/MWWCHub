@@ -329,15 +329,12 @@ function ShowSessionDetail() {
     var speechTitleEle = $("#" + sessionRowId + " td div p span").filter(".eventTitle");
     var speechTitle = $(speechTitleEle).html();
     sessionDetail.speechTitle = speechTitle;
- 
-    //sessionDetail.speaker = "Sandra Harmon, RN, MSN, Rachael Rubin, Linda Townsend, Lisa Vasile, NP";
 
     //Retrieve and set the location.
     var locationEle = $("#" + sessionRowId + " td div p span").filter(".eventLocation");
     var location = $(locationEle).html();
     sessionDetail.location = location;
-
-
+    
     var speakerEle = $("#" + sessionRowId + " td div p span").filter(".eventSpeaker");
     var speakersToBeMatched = $(speakerEle).html();
 
@@ -355,6 +352,22 @@ function ShowSessionDetail() {
     var generatedHTML = gCompliedSessionDetailTemplate(sessionDetail);
     $("#sessionDetailRegion").html(generatedHTML);
 
+    //Retrieve and set star state.
+    var rawId = sessionRowId.replace("sessionRow", "");
+    var starEle = $("#sessionSelector" + rawId);
+    var starInSessionDetail = $("#sessionDetailSelector");
+    starInSessionDetail.attr("sessionRawId", rawId)
+
+    if (starEle.attr("class").indexOf("StarSelected") >= 0) {
+        starInSessionDetail.attr('class', 'StarSelected fa fa-star fa-lg');
+        starInSessionDetail.attr('style', 'color:forestgreen');
+    } else {
+        starInSessionDetail.attr('class', 'fa fa-star-o fa-lg');
+    }
+
+    $(document).off("click", "#sessionDetailSelector", starInSessionDetailClicked);
+    $(document).on("click", "#sessionDetailSelector", starInSessionDetailClicked);
+
     sessionDetail = null;
 
     $(".footer").hide();
@@ -363,6 +376,26 @@ function ShowSessionDetail() {
     console.log("ShowSessionDetail completed");
 }
 
+function starInSessionDetailClicked() {
+
+
+    var starEle = $(this);
+
+    if (starEle.attr("class").indexOf("StarSelected") >= 0) {
+        //If selected, do deselect.
+        starEle.attr('class', 'fa fa-star-o fa-lg');
+    } else {
+        //If not selected, do select.
+        starEle.attr('class', 'StarSelected fa fa-star fa-lg');
+        starEle.attr('style', 'color:forestgreen');
+    }
+
+    //Click the corresponding star in the schedule.
+    var rawId = starEle.attr("sessionRawId");
+    var starFromSched = $("#sessionSelector" + rawId);
+    starFromSched.click();
+
+}
 
 function ShowOverview() {
     console.log("ShowOverview begin");
