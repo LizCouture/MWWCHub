@@ -123,10 +123,10 @@ var app = {
 
             if (button.hasClass("expanded")) {
                 $("#panel" + rawId).slideUp(300);
-                button.attr('class', 'expander collapsed fa fa-plus-square-o fa-fw')
+                button.attr('class', 'expander collapsed fa fa-plus-square-o fa-fw');
             } else if (button.hasClass("collapsed")) {
                 $("#panel" + rawId).slideDown(300);
-                button.attr('class', 'expander expanded fa fa-minus-square-o fa-fw')
+                button.attr('class', 'expander expanded fa fa-minus-square-o fa-fw');
             }
             
         });
@@ -384,7 +384,7 @@ function ShowSessionDetail() {
     var rawId = sessionRowId.replace("sessionRow", "");
     var starEle = $("#sessionSelector" + rawId);
     var starInSessionDetail = $("#sessionDetailSelector");
-    starInSessionDetail.attr("sessionRawId", rawId)
+    starInSessionDetail.attr("sessionRawId", rawId);
 
     if (starEle.attr("class").indexOf("StarSelected") >= 0) {
         starInSessionDetail.attr('class', 'StarSelected fa fa-star fa-lg');
@@ -581,7 +581,7 @@ function SortSchedArray(schedArray) {
             return 1; // put the Keynote session on top
         }
         // ascending order
-        difference = a.startTimeTicks - b.startTimeTicks
+        difference = a.startTimeTicks - b.startTimeTicks;
         return difference;
     });
 
