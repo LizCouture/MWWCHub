@@ -12,6 +12,9 @@
         },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "software.geisel.mwwchub"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "software.geisel.mwwchub"
         }
     },
     "dependent_plugins": {}
