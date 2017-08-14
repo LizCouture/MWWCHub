@@ -1,26 +1,58 @@
 [
     {
-      "name": "Bose Corporation"
+        "name": "Bose Corporation",
+        "website": "https://www.bose.com/en_us/index.html"
     },
-
     {
-      "name": "Applause"
+        "name": "Applause",
+        "website": "https://www.applause.com/"
     },
-
     {
-      "name": "Avidia Bank"
+        "name": "Avidia Bank",
+        "website": "https://www.avidiabank.com/"
     },
-
     {
-      "name": "Middlesex Savings Bank"
+        "name": "Middlesex Savings Bank",
+        "website": "https://www.middlesexbank.com/"
     },
-
     {
-      "name": "MutualOne Bank"
+        "name": "MutualOne Bank",
+        "website": "https://www.mutualone.com/"
     },
-
     {
-      "name": "MetroWest Medical Center"
+        "name": "MetroWest Medical Center",
+        "website": "https://www.mwmc.com/"
+    },
+    {
+        "name": "Framingham State University",
+        "website": "https://www.framingham.edu/"
+    },
+    {
+        "name": "Eastern Bank",
+        "website": "https://www.easternbank.com/"
+    },
+    {
+        "name": "Microsoft",
+        "website": "https://www.microsoft.com/en-us/"
+    },
+    {
+        "name": "American Girl",
+        "website": "http://www.americangirl.com/shop/american-girl-logo-shop"
+    },
+    {
+        "name": " Cumberland Farms",
+        "website": "https://www.cumberlandfarms.com/"
+    },
+    {
+        "name": "The TJX Companies, Inc.",
+        "website": "http://www.tjx.com/index.html"
+    },
+    {
+        "name": "MAPA Translations",
+        "website": "http://mapatranslation.com/"
+    },
+    {
+        "name": "Fitts Insurance Agency",
+        "website": "https://www.fittsinsurance.com/"
     }
 ]
-

@@ -24,7 +24,7 @@
             <p class="splashBackground">
                 <img src="img/logo.png" style="padding-top:50px;" />
                 <br />
-                <img src="img/Loading.gif" style=" z-index:900;" />
+                <img src="img/Loading.gif" style="z-index:900; padding-top:50px;" width="60" height="60" />
             </p>
         </div>
 
@@ -123,7 +123,7 @@
                         <th>
                             <a class="eventTime sessionDetailNavigator">
                                 <span class="startTime">{{GetLocalTimeLabel starttime}}</span>
-                                <br>
+                                <br />
                                 <span class="endTime">{{GetLocalTimeLabel endtime}}</span>
                             </a>
                         </th>
@@ -180,7 +180,7 @@
             <table style="width:100%; height:2px; background-color:#b277c9">
                 <tr style="font-size:20px;">&nbsp;Speakers</tr>
             </table>
-            <table id="speakers" style="border-spacing:0px 10px">
+            <table id="speakers" style="border-spacing:0px 10px; width:100%;">
                 <tbody>
                     <!--From the JSON data loaded from speakers.json, foreach object in the speaker array apply this html template block: -->
                     {{#speakerInfoItems}}
@@ -194,7 +194,9 @@
                                     <br><br />
                                     <span style ="font-weight:bold; font-size:14px;" class="speakerTtile">{{title}}</span>
                                     <br>
-                                    <span style="font-size:12px" class="speakerDescription">{{{description}}}</span>
+                                    <span style="font-size:12px" class="speakerDescription">{{description}}</span>
+                                    <br />
+                                    <a href="{{website}}" target="_blank" style="color:hotpink; font-size: 12px;">{{website}}</a>
                                 </p>
                             </div>
                         </td>
@@ -213,14 +215,22 @@
                     {{#exhibitors}}
                     <tr>
                         <td style="width:5px;"></td>
-                        <td class="exhibitorStyle shadow">
+                        <td class="exhibitorStyle shadow" style="background-color: white; color: black;">
                             <div class="exhibitorInfo">
                                 <p>
                                     <span class="bold speaker">{{name}}</span>
                                     <br>
                                     <span class="speakerTtile">{{sponsortype}}</span>
                                 </p>
+                                <div id="panel{{id}}" style="display:none; font-size: 14px">
+                                    <p>Email: {{email}}<a href="mailto:{{email}}" target="_blank"><i class="fa fa-envelope fa-fw" style="color:slategray;"></i></p></a>
+                                    <p>Phone Number: {{phonenumber}}</p>
+                                </div>
                             </div>
+                        </td>
+                        <td class="exhibitorStyle shadow" style="width:50px; text-align:center; background-color: #b277c9;">
+                            <p><a href="{{website}}" target="_blank"><i class="fa fa-external-link fa-fw"></i></a></p>
+                            <p><i id="expanderId{{id}}" class="expander collapsed fa fa-plus-square-o fa-fw"></i></p>
                         </td>
                         <td style="width:5px;"></td>
                     </tr>
@@ -243,6 +253,7 @@
                                 </p>
                             </div>
                         </td>
+                        <td class="sponsorsStyle shadow" style="width:50px; text-align:center;"><a href="{{website}}" target="_blank"><i class="fa fa-external-link fa-lg fa-fw"></i></a></td>
                         <td style="width:5px;"></td>
                     </tr>
                     {{/sponsors}}

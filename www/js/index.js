@@ -43,7 +43,8 @@ var gIsShowStarredSessionsOnly = false;
 var gCompliedSessionDetailTemplate = null;
 var gSpeakers = null;
 
-
+var enableCheckJsonDataUpdates = true;
+var jsonDataSite = "https://mwwcdatadev01.azurewebsites.net";
 
 
 
@@ -66,6 +67,7 @@ var app = {
 
         $.getJSON("data/schedule.json", function (data) {
             var jsonRoot = {};
+            SortSchedArray(data);
             jsonRoot.sessions = data;
             var schedTemplate = $("#scheduleTemplate").html();
             var compliedSchedTemplate = Handlebars.compile(schedTemplate);
@@ -103,6 +105,32 @@ var app = {
         $(document).on("click", "#exhibitorsNavigator", ShowExhibitors);
         $(document).on("click", "#sponsorsNavigator", ShowSponsors);
 
+       /* $(document).on("click", ".expand", function () {
+            $("#panel").slideDown(300);
+            this.attr('class', 'collapse fa fa-minus-square-o fa-lg fa-fw');
+        });
+        $(document).on("click", ".collapse", function () {
+            $("#panel").slideup(300);
+            this.attr('class', 'expand fa fa-plus-square-o fa-lg fa-fw');
+        });*/
+
+        $(document).on("click", ".expander", function () {
+            var expanderId = $(this).attr('id');
+
+            var button = $(this);
+            var rawId = expanderId.replace("expanderId", "");
+            console.log("ExpanderId" + expanderId + " clicked.");
+
+            if (button.hasClass("expanded")) {
+                $("#panel" + rawId).slideUp(300);
+                button.attr('class', 'expander collapsed fa fa-plus-square-o fa-fw')
+            } else if (button.hasClass("collapsed")) {
+                $("#panel" + rawId).slideDown(300);
+                button.attr('class', 'expander expanded fa fa-minus-square-o fa-fw')
+            }
+            
+        });
+        
         $("#launchEmailClientForSurvey").attr("href", gSurveyHref);
 
         $("#loadingStatus").hide();
@@ -499,19 +527,15 @@ function ShowSponsors() {
 
     if (gSponsorsLoaded === false) {
 
-        $.getJSON("data/sponsors.json", function (data) {
-            var jsonRoot = {};
-            jsonRoot.sponsors = data;
-            var spTemplate = $("#sponsorsTemplate").html();
-            var compliedSpTemplate = Handlebars.compile(spTemplate);
-            var generatedHTML = compliedSpTemplate(jsonRoot);
-            $("#sponsorsRegion").append(generatedHTML);
+        if (enableCheckJsonDataUpdates === true) {
+            // Try getting it from the data web site first.
+            LoadSponsors(jsonDataSite + "/sponsors.json");
+        }
 
-        }).fail(function (jqxhr, textStatus, error) {
-            var err = textStatus + ", " + error;
-            console.log("Get sponsors data failed: " + err);
-        });
-        gSponsorsLoaded = true;
+        if (gSponsorsLoaded === false) {
+            // Fall back to getting the data locally.
+            LoadSponsors("data/sponsors.json");
+        }
     }
     $(".footer").hide();
     targetViewEle.show();
@@ -519,12 +543,49 @@ function ShowSponsors() {
     console.log("ShowSponsors completed");
 }
 
+function LoadSponsors(dataPath) {
+    $.getJSON(dataPath, function (data) {
+        var jsonRoot = {};
+        jsonRoot.sponsors = data;
+        var spTemplate = $("#sponsorsTemplate").html();
+        var compliedSpTemplate = Handlebars.compile(spTemplate);
+        var generatedHTML = compliedSpTemplate(jsonRoot);
+        $("#sponsorsRegion").append(generatedHTML);
+
+    }).fail(function (jqxhr, textStatus, error) {
+        var err = textStatus + ", " + error;
+        console.log("Get sponsors data failed: " + err);
+    });
+    gSponsorsLoaded = true;
+}
+
+
 function GoBackClicked() {
     gIsGoingBackToActiveView = true;
     $(window).scrollTop(0);
     ShowView();
 }
 
+function SortSchedArray(schedArray) {
+    // Convert the start time string to a number for comparison during sorting.
+    $(schedArray).each(function () {
+        this.startTimeTicks = Date.parse(this.starttime);
+    });
+
+    schedArray.sort(function (a, b) {
+        var difference = 0;
+
+        if (a.speechtitle.toLowerCase().indexOf("keynote") >= 0) {
+            return -1; // put the Keynote session on top
+        } else if (b.speechtitle.toLowerCase().indexOf("keynote") >= 0) {
+            return 1; // put the Keynote session on top
+        }
+        // ascending order
+        difference = a.startTimeTicks - b.startTimeTicks
+        return difference;
+    });
+
+}
 
 function GetLocalTimeFromUtcDateTimeString(utcDateTimeInString) {
     // for example, "1899-12-30T14:45:00.000Z" is 2:45 PM UTC and 9:45 AM is Eastern Standard Time.
@@ -542,5 +603,9 @@ function GetLocalTimeFromUtcDateTimeString(utcDateTimeInString) {
     return strTime;
 }
 
-
-
+$('a[target=_blank]').on('click', function (e) {
+    //Opens all links with target="_blank" in external browser.
+    e.preventDefault();
+    window.open($(this).attr('href'), '_system');
+    return false;
+});
