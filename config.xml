@@ -2,10 +2,10 @@
 <widget id="software.geisel.mwwchub" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MWWCHub</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A schedule and feedback app for the Metrowest Conference for Women.
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        Geisel Software
     </author>
     <content src="index.html" />
     <access origin="*" />

@@ -26,7 +26,7 @@ var gSurveyEmailBody = "Please provide your feedback:";
 var gSurveyHref = "mailto:" + gSurveyReceiver + "?subject=" + gSurveyEmailSubject + "&body=" + gSurveyEmailBody;
 */
 
-var gSurveyHref = "https://goo.gl/forms/JAKD78AjCfiNdZ9x1";
+var gSurveyHref = "https://goo.gl/forms/PiLqI1w2h9022qz72";
 
 var gLocalStorage = window.localStorage;
 var gInitializedWithLocalStorage = false;
@@ -69,6 +69,7 @@ var app = {
 
         Handlebars.registerHelper('GetLocalTimeLabel', GetLocalTimeFromUtcDateTimeString);
 
+
         $.getJSON("data/schedule.json", function (data) {
             var jsonRoot = {};
             SortSchedArray(data);
@@ -109,6 +110,10 @@ var app = {
         $(document).on("click", "#exhibitorsNavigator", ShowExhibitors);
         $(document).on("click", "#sponsorsNavigator", ShowSponsors);
 
+        /*Panel expander. How to use:
+        * Give the toggler <i id="expanderId____" class="expander collapsed fa fa-plus-square-o"></i>
+        * Give the panel (must be in a <p>) <p id="panel____" style="display:none;"></p>
+        */
         $(document).on("click", ".expander", function () {
             var expanderId = $(this).attr('id');
 
@@ -125,6 +130,7 @@ var app = {
             }
             
         });
+
         
         $("#launchEmailClientForSurvey").attr("href", gSurveyHref);
 
