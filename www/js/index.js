@@ -18,13 +18,15 @@
  */
 
 
+//Currently using a Google Form instead of mailto.
+/*
 var gSurveyReceiver = "jenmaseda@metrowestconferenceforwomen.com";
 var gSurveyEmailSubject = "Feedback";
 var gSurveyEmailBody = "Please provide your feedback:";
 var gSurveyHref = "mailto:" + gSurveyReceiver + "?subject=" + gSurveyEmailSubject + "&body=" + gSurveyEmailBody;
+*/
 
-// Currently not using a Survey Google Feedback form.
-//var gSurveyWebPageUrl = "https://goo.gl/forms/sv0fOr4uRf8v1z0A3"
+var gSurveyHref = "https://goo.gl/forms/JAKD78AjCfiNdZ9x1";
 
 var gLocalStorage = window.localStorage;
 var gInitializedWithLocalStorage = false;
@@ -45,6 +47,8 @@ var gSpeakers = null;
 
 var enableCheckJsonDataUpdates = true;
 var jsonDataSite = "https://mwwcdatadev01.azurewebsites.net";
+
+var gPreviousScrollHeight = 0;
 
 
 
@@ -105,15 +109,6 @@ var app = {
         $(document).on("click", "#exhibitorsNavigator", ShowExhibitors);
         $(document).on("click", "#sponsorsNavigator", ShowSponsors);
 
-       /* $(document).on("click", ".expand", function () {
-            $("#panel").slideDown(300);
-            this.attr('class', 'collapse fa fa-minus-square-o fa-lg fa-fw');
-        });
-        $(document).on("click", ".collapse", function () {
-            $("#panel").slideup(300);
-            this.attr('class', 'expand fa fa-plus-square-o fa-lg fa-fw');
-        });*/
-
         $(document).on("click", ".expander", function () {
             var expanderId = $(this).attr('id');
 
@@ -167,9 +162,9 @@ function ShowView() {
     if (targetView === "surveyView") {
 
         if (device.platform.toUpperCase() === 'IOS' || device.platform.toUpperCase() === 'BROWSER') {
-            window.open(gSurveyHref);
+            window.open(gSurveyHref, '_system');
         } else if (device.platform.toUpperCase() === 'ANDROID') {
-            navigator.app.loadUrl(gSurveyHref);
+            navigator.app.loadUrl(gSurveyHref, '_system');
         }
 
         //Not used at this point. The Survey link uses mailto: in the href.
@@ -243,6 +238,7 @@ function SessionSelectorClicked() {
         // Do deselect
         console.log("In SessionSelectorClicked - Do deselect begin");
         star.attr('class', 'sessionSelector fa fa-star-o fa-lg');
+        star.attr('style', 'color:black');
 
         storedSessionId = gLocalStorage.getItem(sessionSelectorId);
         //If the key is there, remove it.
@@ -263,7 +259,7 @@ function SessionSelectorClicked() {
         console.log("In SessionSelectorClicked - Do select begin");
 
         star.attr('class', 'StarSelected sessionSelector fa fa-star fa-lg');
-        star.attr('style', 'color:forestgreen');
+        star.attr('style', 'color:#97f0ea');
 
         storedSessionId = gLocalStorage.getItem(sessionSelectorId);
         //If the key is not set, track it.
@@ -291,7 +287,7 @@ function SelectSessionSelector(sessionSelectorId) {
 
     // Do select
     star.attr('class', 'StarSelected sessionSelector fa fa-star fa-lg');
-    star.attr('style', 'color:forestgreen');
+    star.attr('style', 'color:#97f0ea');
 
     if (sessionRow.hasClass('sessionNotSelected')) {
         sessionRow.removeClass('sessionNotSelected');
@@ -327,6 +323,9 @@ function ShowAllSessions() {
 
 function ShowSessionDetail() {
     console.log("ShowSessionDetail begin");
+
+    gPreviousScrollHeight = $(document).scrollTop();
+    console.log("gPreviousScrollHeight is " + gPreviousScrollHeight);
 
     $(".pageView").each(function () {
         $(this).hide();
@@ -388,9 +387,10 @@ function ShowSessionDetail() {
 
     if (starEle.attr("class").indexOf("StarSelected") >= 0) {
         starInSessionDetail.attr('class', 'StarSelected fa fa-star fa-lg');
-        starInSessionDetail.attr('style', 'color:forestgreen');
+        starInSessionDetail.attr('style', 'color:#97f0ea');
     } else {
         starInSessionDetail.attr('class', 'fa fa-star-o fa-lg');
+        starInSessionDetail.attr('style', 'color:black');
     }
 
     $(document).off("click", "#sessionDetailSelector", starInSessionDetailClicked);
@@ -400,6 +400,7 @@ function ShowSessionDetail() {
 
     $(".footer").hide();
     targetViewEle.show();
+    $(window).scrollTop(0);
 
     console.log("ShowSessionDetail completed");
 }
@@ -412,10 +413,11 @@ function starInSessionDetailClicked() {
     if (starEle.attr("class").indexOf("StarSelected") >= 0) {
         //If selected, do deselect.
         starEle.attr('class', 'fa fa-star-o fa-lg');
+        starEle.attr('style', 'color:black');
     } else {
         //If not selected, do select.
         starEle.attr('class', 'StarSelected fa fa-star fa-lg');
-        starEle.attr('style', 'color:forestgreen');
+        starEle.attr('style', 'color:#97f0ea');
     }
 
     //Click the corresponding star in the schedule.
@@ -560,10 +562,14 @@ function LoadSponsors(dataPath) {
 }
 
 
-function GoBackClicked() {
+function GoBackClicked() { 
     gIsGoingBackToActiveView = true;
-    $(window).scrollTop(0);
     ShowView();
+    console.log("Returned to active view.");
+
+    $(window).scrollTop(gPreviousScrollHeight);
+    console.log("Went back to PreviousScrollHeight of " + gPreviousScrollHeight)
+    gPreviousScrollHeight = 0;
 }
 
 function SortSchedArray(schedArray) {

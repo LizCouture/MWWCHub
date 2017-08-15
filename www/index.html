@@ -30,8 +30,6 @@
 
         <div id="navigationPanel" style="display:none;">
             <table style="width: 100%; text-align:center; border-spacing:10px;">
-
-                <div>
                     <tr>
                         <td id="overviewNavigator" class="indexBottom1 shadow">
                             <a><i class="fa fa-info-circle fa-2x fa-fw" style="color:#660066;"></i></a>
@@ -42,7 +40,7 @@
                             <br />Schedule
                         </td>
                     </tr>
-                    <tr destinationView="schedView" class="viewNavigator" filterMode="starred">
+                    <tr>
                         <td destinationView="schedView" class="viewNavigator indexBottom3 shadow" filterMode="starred">
                             <a><i class="fa fa-calendar-plus-o fa-2x fa-fw" style="color:#660029;"></i></a>
                             <br />Starred
@@ -62,7 +60,6 @@
                             <br />Sponsors
                         </td>
                     </tr>
-                </div>
             </table>
             <table style="width: 100%; text-align:center;">
                 <tr id="aboutUsNavigator">
@@ -220,8 +217,8 @@
                                     <span class="speakerTtile">{{sponsortype}}</span>
                                 </p>
                                 <div id="panel{{id}}" style="display:none; font-size: 14px">
-                                    <p>Email: {{email}}<a href="mailto:{{email}}" target="_blank"><i class="fa fa-envelope fa-fw" style="color:slategray;"></i></a></p>
-                                    <p>Phone Number: {{phonenumber}}</p>
+                                    <p>Email: {{email}}<a href="{{email}}" target="_blank"><i class="fa fa-envelope fa-fw" aria-hidden="true" style="color:slategray;"></i></a></p>
+                                    <p>Phone Number: {{phonenumber}}<i class="fa fa-phone fa-fw" aria-hidden="true" style="color:slategray;"></i></p>
                                 </div>
                             </div>
                         </td>
