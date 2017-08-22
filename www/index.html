@@ -17,7 +17,7 @@
 
     <div id="homeView" pageViewTitle="MetroWest Conference For Women" class="pageView">
         <div id="homeLogo" class="indextop" style="display:none; text-align:center;">
-            <img src="img/logooo.png" height="175"/>
+            <img src="img/logooo.png" style="width:100%; height:auto;"/>
         </div>
 
         <div id="loadingStatus">
@@ -180,21 +180,27 @@
                     {{#speakerInfoItems}}
                     {{#if show }}
                     <tr>
-                        <td style="width:1px;"></td>
+                        <td style="width:5px;"></td>
                         <td>
                             <div class="speakerInfo shadow sessionInfoStyle">
                                 <p>
                                     <span style="font-size: 18px; font-variant: small-caps;" class="bold speaker">{{name}}</span>
+                                    {{#if showTitle}}
                                     <br><br />
                                     <span style ="font-weight:bold; font-size:14px;" class="speakerTtile">{{title}}</span>
+                                    {{/if}}
+                                    {{#if showDescription}}
                                     <br>
                                     <span style="font-size:12px" class="speakerDescription">{{description}}</span>
+                                    {{/if}}
+                                    {{#if showWebsite}}
                                     <br /><br />
-                                    <i style="color:hotpink;" class="fa fa-external-link" aria-hidden="true"></i><a href="{{website}}" target="_blank" style="color:hotpink; font-size: 12px;"> {{website}}</a>
+                                    <span style="text-align:center;"><a href="{{website}}" target="_blank" style="color:hotpink;"><i style="color:hotpink;" class="fa fa-external-link fa-lg" aria-hidden="true"></i> Website</a></span>
+                                    {{/if}}
                                 </p>
                             </div>
                         </td>
-                        <td style="width:1px;"></td>
+                        <td style="width:5px;"></td>
                     </tr>
                     {{/if}}
                     {{/speakerInfoItems}}

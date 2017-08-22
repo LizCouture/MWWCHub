@@ -378,6 +378,24 @@ function ShowSessionDetail() {
         } else {
             this.show = false;
         }
+
+        if (IsEmpty(this.description)) {
+            this.showDescription = false;
+        } else {
+            this.showDescription = true;
+        }
+
+        if (IsEmpty(this.website)) {
+            this.showWebsite = false;
+        } else {
+            this.showWebsite = true;
+        }
+
+        if (IsEmpty(this.title)) {
+            this.showTitle = false;
+        } else {
+            this.showTitle = true;
+        }
     });
 
     sessionDetail.speakerInfoItems = gSpeakers;
@@ -587,11 +605,14 @@ function SortSchedArray(schedArray) {
     schedArray.sort(function (a, b) {
         var difference = 0;
 
-        if (a.speechtitle.toLowerCase().indexOf("keynote") >= 0) {
+        //Currently not using this code, as lunch keynotes also contain "Keynote"
+       /* if (a.speechtitle.toLowerCase().indexOf("keynote") >= 0) {
             return -1; // put the Keynote session on top
         } else if (b.speechtitle.toLowerCase().indexOf("keynote") >= 0) {
             return 1; // put the Keynote session on top
         }
+        */
+
         // ascending order
         difference = a.startTimeTicks - b.startTimeTicks;
         return difference;
@@ -615,9 +636,19 @@ function GetLocalTimeFromUtcDateTimeString(utcDateTimeInString) {
     return strTime;
 }
 
+
+
 $('a[target=_blank]').on('click', function (e) {
     //Opens all links with target="_blank" in external browser.
     e.preventDefault();
     window.open($(this).attr('href'), '_system');
     return false;
 });
+
+function IsEmpty(value) {
+    if (typeof value == 'string' && !value.trim() || typeof value == 'undefined' || value === null) {
+        return true;
+    } else {
+        return false;
+    }
+}
