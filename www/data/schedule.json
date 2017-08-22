@@ -6,15 +6,15 @@
         "endtime": "1899-12-30T13:30:00.000Z",
         "location": "Main Ballroom"
     },
-  {
-    "sessionid": 1020,
-    "speechtitle": "Breakfast Keynote: Stop Trying to Fix Women",
-    "starttime": "1899-12-30T13:30:00.000Z",
-    "endtime": "1899-12-30T14:30:00.000Z",
-    "location": "Main Ballroom",
-    "speaker": "Dr. Patti Fletcher",
-    "description": "CEO, PSD NETWORK LLC<br/><br/>Dr. Fletcher is a voice of change inside global tech firm SAP, speaking and writing about gender in leadership and technology. Dr. Fletcher sits on the board of Astia, an international non-profit supporting women-led, high-growth startups, and is part of Astia Angels’ investing arm. She is professionally affiliated with the Babson College-based business accelerator Women Innovating Now (WIN Lab) as well as The Boston Club, focused on increasing women-held board seats on companies in Massachusetts. She is the founder of PSDNetwork LLC, a consultancy advising women executives (poised to become CEOs or board members) as well as corporations seeking to address women's access and equity.\r\n\r\nPatti's book, hitting the shelves in January 2018, Disrupters - Success Strategies of Women Who Break the Mold has been called the “anti-Lean In”. Come hear a preview!"
-  },
+    {
+        "sessionid": 1020,
+        "speechtitle": "Breakfast Keynote: Stop Trying to Fix Women",
+        "starttime": "1899-12-30T13:30:00.000Z",
+        "endtime": "1899-12-30T14:30:00.000Z",
+        "location": "Main Ballroom",
+        "speaker": "Dr. Patti Fletcher",
+        "description": "CEO, PSD NETWORK LLC\r\n\r\nDr. Fletcher is a voice of change inside global tech firm SAP, speaking and writing about gender in leadership and technology. Dr. Fletcher sits on the board of Astia, an international non-profit supporting women-led, high-growth startups, and is part of Astia Angels’ investing arm. She is professionally affiliated with the Babson College-based business accelerator Women Innovating Now (WIN Lab) as well as The Boston Club, focused on increasing women-held board seats on companies in Massachusetts. She is the founder of PSDNetwork LLC, a consultancy advising women executives (poised to become CEOs or board members) as well as corporations seeking to address women's access and equity.\r\n\r\nPatti's book, hitting the shelves in January 2018, Disrupters - Success Strategies of Women Who Break the Mold has been called the “anti-Lean In”. Come hear a preview!"
+    },
     {
         "sessionid": 1030,
         "speechtitle": "Breakfast Keynote: Fireside Chat with the CEO of MA fastest Growing Business",
@@ -28,7 +28,8 @@
         "sessionid": 1040,
         "speechtitle": "Exibitors/Networking",
         "starttime": "1899-12-30T14:30:00.000Z",
-        "endtime": "1899-12-30T15:00:00.000Z"
+        "endtime": "1899-12-30T15:00:00.000Z",
+        "description": "Thank you to the many talented and creative businesses that will be featured during the Conference. Please support these businesses as they obviously love women customers!"
     },
     {
         "sessionid": 1050,
@@ -36,7 +37,7 @@
         "starttime": "1899-12-30T15:00:00.000Z",
         "endtime": "1899-12-30T15:45:00.000Z",
         "speaker": "Bobbie Carlton, Carol Fishman Cohen, Ilyssa Frey, Cheryl Kiser",
-        "description": "Whether you are a new grad, a mid-life career changer, or a senior professional, you CAN get yourself to where you want to go. \"Entrepreneuring\" doesn't just mean starting your own business -- it's being innovative in the way you think about your professional life and goals. Discover who you are, and what and whom you know... and acquire the confidence to go out of bounds and push your professional envelope. No jargon here, just thoughtful, practical advice from a panel of #ExtraordinaryWomen.\n\nKEY LEARNINGS & TAKEAWAYS:\n\n- Looking honestly, and confidently, at the knowledge and expertise you already have\n- Identifying your resources, networks, and support systems\n- Taking one step forward, despite not knowing the final outcome\n- Using setbacks and mistakes to your advantage \n- Recognizing when you’re stuck and developing strategies to get you back on track"
+        "description": "Whether you are a new grad, a mid-life career changer, or a senior professional, you CAN get yourself to where you want to go. \"Entrepreneuring\" doesn't just mean starting your own business -- it's being innovative in the way you think about your professional life and goals. Discover who you are, and what and whom you know... and acquire the confidence to go out of bounds and push your professional envelope. No jargon here, just thoughtful, practical advice from a panel of #ExtraordinaryWomen.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/>- Looking honestly, and confidently, at the knowledge and expertise you already have<br/>- Identifying your resources, networks, and support systems<br/>- Taking one step forward, despite not knowing the final outcome<br/>- Using setbacks and mistakes to your advantage <br/>- Recognizing when you’re stuck and developing strategies to get you back on track"
     },
     {
         "sessionid": 1060,
@@ -44,15 +45,15 @@
         "starttime": "1899-12-30T15:00:00.000Z",
         "endtime": "1899-12-30T15:45:00.000Z",
         "speaker": "Dana Neshe, Nancy Cantor, Bonnie Biocchi, Cheryl Cronin, Helen Lemoine",
-        "description": "This panel of professional women will share their stories, insights and practical strategies that will enable you to create your unique path.  After their stories, these #ExtraordinaryWomen will answer questions, and if time allows, attendees will participate in group mastermind sessions to help clarify your next steps.  \n\nKEY LEARNINGS & TAKEAWAYS:\n\n- Power of Acceptance & Choice\n- Transferable Skills Sets\n- Trust the Requests\n- Trust your Qualifications"
+        "description": "This panel of professional women will share their stories, insights and practical strategies that will enable you to create your unique path.  After their stories, these #ExtraordinaryWomen will answer questions, and if time allows, attendees will participate in group mastermind sessions to help clarify your next steps.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Power of Acceptance & Choice<br/>- Transferable Skills Sets<br/>- Trust the Requests<br/>- Trust your Qualifications"
     },
     {
         "sessionid": 1070,
-        "speechtitle": "Parenting Now; Progress Not Perfection",
+        "speechtitle": "Parenting Now; Progress Not Perfection: A Discussion on Navigating Motherhood from Media to Meals, and Mayhem to Mindfulness",
         "starttime": "1899-12-30T15:00:00.000Z",
         "endtime": "1899-12-30T15:45:00.000Z",
         "speaker": "Janell Burley Hofmann, Jennifer Rutland, Vanessa Gobes, Amy Gardner",
-        "description": "A discussion on navigating motherhood from media to meals, and mayhem to mindfulness."
+        "description": "Parenting is a personal thing. The goal of the panel is to help women determine what works best for them as parents and to give them tools to help them find their authentic parenting style.  These #ExtraordinaryWomen will address issues that apply to all women as parents and help them discover ways to parent with intention.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Finding yourself in parenting<br/>- Self awareness and compassion for self<br/> - Addressing behavioral issues for all children<br/>- Healthy boundaries for your family"
     },
     {
         "sessionid": 1080,
@@ -60,7 +61,7 @@
         "starttime": "1899-12-30T15:00:00.000Z",
         "endtime": "1899-12-30T15:45:00.000Z",
         "speaker": "Belinda Rosenblum, Marie Paturzo, Clemia Brittenum, Tobi Russell",
-        "description": "Women are increasingly managing business and household finances, but may never have learned skills to maximize their worth.  From self-worth to net worth, learn how to value yourself and ask for what you deserve.   You will also learn how to recognize and overcome the emotional, social and financial roadblocks to succeeding financially and growing your wealth. \n\nKEY LEARNINGS & TAKEAWAYS:\n\n- How to value your own work to employers and customers\n- How to ask for what you are worth\n- How to manage and grow your wealth"
+        "description": "Women are increasingly managing business and household finances, but may never have learned skills to maximize their worth.  From self-worth to net worth, learn how to value yourself and ask for what you deserve.   You will also learn how to recognize and overcome the emotional, social and financial roadblocks to succeeding financially and growing your wealth.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- How to value your own work to employers and customers<br/>- How to ask for what you are worth<br/>- How to manage and grow your wealth"
     },
     {
         "sessionid": 1090,
@@ -68,7 +69,7 @@
         "starttime": "1899-12-30T15:00:00.000Z",
         "endtime": "1899-12-30T15:45:00.000Z",
         "speaker": "Erin Mahoney, Kenetra Hinkins, Colleen Phelps, Michelle Cove, Siiri Morley",
-        "description": "This panel of #ExtraordinaryWomen will share concreate strategies and insights about how to empower the girls in your life.  They will cover everything from how to help girls create a positive mindset and navigating social media to appreciating what their bodies can do instead of what size clothing they wear.  These girl experts will share their best practices in and out of classrooms, and from working with thousands of girls!  There will be a Q & A portion as well.\r\n\r\nKEY LEARNINGS & TAKEAWAYS:\r\n\r\n- Powerful strategies for creating a positive mindset\r\n- Navigating complex \"girl rules\" of social media\r\n- How running and other physical activity build confidence\r\n- Supporting girls as they define what success looks like"
+        "description": "This panel of #ExtraordinaryWomen will share concreate strategies and insights about how to empower the girls in your life.  They will cover everything from how to help girls create a positive mindset and navigating social media to appreciating what their bodies can do instead of what size clothing they wear.  These girl experts will share their best practices in and out of classrooms, and from working with thousands of girls!  There will be a Q & A portion as well.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/>- Powerful strategies for creating a positive mindset<br/>- Navigating complex \"girl rules\" of social media<br/>- How running and other physical activity build confidence<br/>- Supporting girls as they define what success looks like"
     },
     {
         "sessionid": 1100,
@@ -76,7 +77,7 @@
         "starttime": "1899-12-30T16:00:00.000Z",
         "endtime": "1899-12-30T16:45:00.000Z",
         "speaker": "Bobbie Carlton, Carol Fishman Cohen, Ilyssa Frey, Cheryl Kiser",
-        "description": "Whether you are a new grad, a mid-life career changer, or a senior professional, you CAN get yourself to where you want to go. \"Entrepreneuring\" doesn't just mean starting your own business -- it's being innovative in the way you think about your professional life and goals. Discover who you are, and what and whom you know... and acquire the confidence to go out of bounds and push your professional envelope. No jargon here, just thoughtful, practical advice from a panel of #ExtraordinaryWomen.\n\nKEY LEARNINGS & TAKEAWAYS:\n\n- Looking honestly, and confidently, at the knowledge and expertise you already have\n- Identifying your resources, networks, and support systems\n- Taking one step forward, despite not knowing the final outcome\n- Using setbacks and mistakes to your advantage \n- Recognizing when you’re stuck and developing strategies to get you back on track"
+        "description": "Whether you are a new grad, a mid-life career changer, or a senior professional, you CAN get yourself to where you want to go. \"Entrepreneuring\" doesn't just mean starting your own business -- it's being innovative in the way you think about your professional life and goals. Discover who you are, and what and whom you know... and acquire the confidence to go out of bounds and push your professional envelope. No jargon here, just thoughtful, practical advice from a panel of #ExtraordinaryWomen.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Looking honestly, and confidently, at the knowledge and expertise you already have<br/>- Identifying your resources, networks, and support systems<br/>- Taking one step forward, despite not knowing the final outcome\n<br/>- Using setbacks and mistakes to your advantage<br/>- Recognizing when you’re stuck and developing strategies to get you back on track"
     },
     {
         "sessionid": 1110,
@@ -84,23 +85,23 @@
         "starttime": "1899-12-30T16:00:00.000Z",
         "endtime": "1899-12-30T16:45:00.000Z",
         "speaker": "Dana Neshe, Nancy Cantor, Bonnie Biocchi, Cheryl Cronin, Helen Lemoine",
-        "description": "This panel of professional women will share their stories, insights and practical strategies that will enable you to create your unique path.  After their stories, these #ExtraordinaryWomen will answer questions, and if time allows, attendees will participate in group mastermind sessions to help clarify your next steps.  \n\nKEY LEARNINGS & TAKEAWAYS:\n\n- Power of Acceptance & Choice\n- Transferable Skills Sets\n- Trust the Requests\n- Trust your Qualifications"
+        "description": "This panel of professional women will share their stories, insights and practical strategies that will enable you to create your unique path.  After their stories, these #ExtraordinaryWomen will answer questions, and if time allows, attendees will participate in group mastermind sessions to help clarify your next steps.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Power of Acceptance & Choice<br/>- Transferable Skills Sets<br/>- Trust the Requests<br/>- Trust your Qualifications"
     },
-  {
-    "sessionid": 1120,
-    "speechtitle": "Parenting Now; Progress Not Perfection",
-    "starttime": "1899-12-30T16:00:00.000Z",
-    "endtime": "1899-12-30T16:45:00.000Z",
-    "speaker": "Janell Burley Hofmann, Jennifer Rutland, Vanessa Gobes, Amy Gardner",
-    "description": "A discussion on navigating motherhood from media to meals, and mayhem to mindfulness."
-  },
+    {
+        "sessionid": 1120,
+        "speechtitle": "Parenting Now; Progress Not Perfection: A Discussion on Navigating Motherhood from Media to Meals, and Mayhem to Mindfulness",
+        "starttime": "1899-12-30T16:00:00.000Z",
+        "endtime": "1899-12-30T16:45:00.000Z",
+        "speaker": "Janell Burley Hofmann, Jennifer Rutland, Vanessa Gobes, Amy Gardner",
+        "description": "Parenting is a personal thing. The goal of the panel is to help women determine what works best for them as parents and to give them tools to help them find their authentic parenting style.  These #ExtraordinaryWomen will address issues that apply to all women as parents and help them discover ways to parent with intention.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Finding yourself in parenting<br/>- Self awareness and compassion for self<br/>- Addressing behavioral issues for all children<br/>-Healthy boundaries for your family"
+    },
     {
         "sessionid": 1130,
         "speechtitle": "Own Your Money, Own Your Worth",
         "starttime": "1899-12-30T16:00:00.000Z",
         "endtime": "1899-12-30T16:45:00.000Z",
         "speaker": "Belinda Rosenblum, Marie Paturzo, Clemia Brittenum, Tobi Russell",
-        "description": "Women are increasingly managing business and household finances, but may never have learned skills to maximize their worth.  From self-worth to net worth, learn how to value yourself and ask for what you deserve.   You will also learn how to recognize and overcome the emotional, social and financial roadblocks to succeeding financially and growing your wealth. \n\nKEY LEARNINGS & TAKEAWAYS:\n\n- How to value your own work to employers and customers\n- How to ask for what you are worth\n- How to manage and grow your wealth"
+        "description": "Women are increasingly managing business and household finances, but may never have learned skills to maximize their worth.  From self-worth to net worth, learn how to value yourself and ask for what you deserve.   You will also learn how to recognize and overcome the emotional, social and financial roadblocks to succeeding financially and growing your wealth.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- How to value your own work to employers and customers<br/>- How to ask for what you are worth<br/>- How to manage and grow your wealth"
     },
     {
         "sessionid": 1140,
@@ -108,13 +109,14 @@
         "starttime": "1899-12-30T16:00:00.000Z",
         "endtime": "1899-12-30T16:45:00.000Z",
         "speaker": "Erin Mahoney, Kenetra Hinkins, Colleen Phelps, Michelle Cove, Siiri Morley",
-        "description": "This panel of #ExtraordinaryWomen will share concreate strategies and insights about how to empower the girls in your life.  They will cover everything from how to help girls create a positive mindset and navigating social media to appreciating what their bodies can do instead of what size clothing they wear.  These girl experts will share their best practices in and out of classrooms, and from working with thousands of girls!  There will be a Q & A portion as well.\r\n\r\nKEY LEARNINGS & TAKEAWAYS:\r\n\r\n- Powerful strategies for creating a positive mindset\r\n- Navigating complex \"girl rules\" of social media\r\n- How running and other physical activity build confidence\r\n- Supporting girls as they define what success looks like"
+        "description": "This panel of #ExtraordinaryWomen will share concreate strategies and insights about how to empower the girls in your life.  They will cover everything from how to help girls create a positive mindset and navigating social media to appreciating what their bodies can do instead of what size clothing they wear.  These girl experts will share their best practices in and out of classrooms, and from working with thousands of girls!  There will be a Q & A portion as well.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Powerful strategies for creating a positive mindset<br/>- Navigating complex \"girl rules\" of social media<br/>- How running and other physical activity build confidence<br/>- Supporting girls as they define what success looks like"
     },
     {
         "sessionid": 1150,
         "speechtitle": "Exibitors/Networking",
         "starttime": "1899-12-30T17:00:00.000Z",
-        "endtime": "1899-12-30T17:30:00.000Z"
+        "endtime": "1899-12-30T17:30:00.000Z",
+        "description": "Thank you to the many talented and creative businesses that will be featured during the Conference. Please support these businesses as they obviously love women customers!"
     },
     {
         "sessionid": 1160,
@@ -123,7 +125,7 @@
         "endtime": "1899-12-30T18:45:00.000Z",
         "location": "Main Ballroom",
         "speaker": "Maria Marlowe",
-        "description": "Maria is changing the way America eats.  As an Integrative Nutrition Health Coach & Speaker she inspires audiences to prioritize their health and get excited to improve their eating habits.  She makes healthy living simple, through practical, actionable advice (delivered with a dose of humor).  Maria is the author of The Real Food Grocery Guide and specializes in improving health, weight, and skin through eating real food and living a healthy lifestyle. \r\n\r\nMaria Marlowe will present \"Excuses Be Gone! How to Create Healthy Habits That Stick\"."
+        "description": "Maria is changing the way America eats.  As an Integrative Nutrition Health Coach & Speaker she inspires audiences to prioritize their health and get excited to improve their eating habits.  She makes healthy living simple, through practical, actionable advice (delivered with a dose of humor).  Maria is the author of The Real Food Grocery Guide and specializes in improving health, weight, and skin through eating real food and living a healthy lifestyle.<br/><br/>Maria Marlowe will present \"Excuses Be Gone! How to Create Healthy Habits That Stick\"."
     },
     {
         "sessionid": 1170,
@@ -132,7 +134,7 @@
         "endtime": "1899-12-30T18:45:00.000Z",
         "location": "Main Ballroom",
         "speaker": "Liz O'Donnell",
-        "description": "SPEAKER, AUTHOR, AND ENTREPRENEUR\r\n\r\nLiz O’Donnell, a longtime marketing executive, is the author of Mogul, Mom & Maid: The Balancing Act of the Modern Woman, which examines the impact of women’s personal lives on their careers and ways that business can support working women.  An award-winning blogger, she runs the website Working Daughter and is at work on her second book, a guide to caring for aging parents without losing your job, your marriage or your sanity. \r\n\r\nLiz is the co-founder of SheStarts, which supports the growing pipeline of women entrepreneurs in Boston through networking, coaching and events. Liz is a frequent speaker and consultant to women seeking to thrive and the organizations wanting to mobilize them."
+        "description": "SPEAKER, AUTHOR, AND ENTREPRENEUR<br/><br/>Liz O’Donnell, a longtime marketing executive, is the author of Mogul, Mom & Maid: The Balancing Act of the Modern Woman, which examines the impact of women’s personal lives on their careers and ways that business can support working women.  An award-winning blogger, she runs the website Working Daughter and is at work on her second book, a guide to caring for aging parents without losing your job, your marriage or your sanity.<br/><br/>Liz is the co-founder of SheStarts, which supports the growing pipeline of women entrepreneurs in Boston through networking, coaching and events. Liz is a frequent speaker and consultant to women seeking to thrive and the organizations wanting to mobilize them."
     },
     {
         "sessionid": 1180,
@@ -140,22 +142,23 @@
         "starttime": "1899-12-30T19:00:00.000Z",
         "endtime": "1899-12-30T19:45:00.000Z",
         "speaker": "Michelle Mercier, Mal Duane, Chantel Bethea, Gayle Suzanne",
-        "description": "Do you ever set goals but just can't seem to accomplish them? Do you automatically place your dreams at the bottom of the \"To Do\" list?  Enough is enough!  This session is designed to remove the emotional blocks that are holding you back from success.  These #ExtraordinaryWomen will discuss the different types of self-sabotage that women often practice and how to combat them.  You'll walk away feeling empowered and ready to take on the world! \r\n\r\nKEY LEARNINGS & TAKEAWAYS:\r\n\r\n- Align your thoughts with your vision of success\r\n- Remove energy “drainers” from your life\r\n- Fight back when “victim mentality” sets in\r\n- Celebrate progress and NOT perfection\r\n- Put yourself at the TOP of your “To Do” List"
+        "description": "Do you ever set goals but just can't seem to accomplish them? Do you automatically place your dreams at the bottom of the \"To Do\" list?  Enough is enough!  This session is designed to remove the emotional blocks that are holding you back from success.  These #ExtraordinaryWomen will discuss the different types of self-sabotage that women often practice and how to combat them.  You'll walk away feeling empowered and ready to take on the world!<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Align your thoughts with your vision of success<br/>- Remove energy “drainers” from your life<br/>- Fight back when “victim mentality” sets in<br/>- Celebrate progress and NOT perfection<br/>\n- Put yourself at the TOP of your “To Do” List"
     },
     {
         "sessionid": 1190,
         "speechtitle": "Extraordinary Love & Relationships: The How To's For Creating What You've Always Wanted",
         "starttime": "1899-12-30T19:00:00.000Z",
         "endtime": "1899-12-30T19:45:00.000Z",
-        "speaker": "Catherine Hummel, Deanna Coyle, Samantha Burns, Dr Susan Trotter, Carly Baker",
+        "speaker": "Catherine Hummel, Deanna Coyle, Samantha Burns, Dr. Susan Trotter, Carly Baker",
         "description": "Join these #ExtraordinaryWomen as they discuss love, relationships, dating, divorce and self-worth.  Come learn what is takes to create and actualize extraordinary relationships in your own life-starting with you! You will takeaway real world tools for understanding yourself and others as well as ways to surmount the obstacles that get in the way of creating the extraordinary relationships you want and deserve! "
     },
     {
         "sessionid": 1200,
-        "speechtitle": "Colorful Women Leading the Way",
+        "speechtitle": "Are You Being Too Guarded? Making Yourself Vulnerable in Both Your Professional & Personal Life",
         "starttime": "1899-12-30T19:00:00.000Z",
         "endtime": "1899-12-30T19:45:00.000Z",
-        "speaker": "Enna Jimenez, Roxann Cooke, Maria Salomao-Schmidt, Sylvia Ruiz, Brenda Cole"
+        "speaker": "Enna Jimenez, Roxann Cooke, Maria Salomao-Schmidt, Sylvia Ruiz, Brenda Cole",
+        "description": "What are you afraid of?  As women we have always struggled with vulnerability. What are the fears and barriers we experience, and what can we do to be more approachable, open and trusting?<br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Being vulnerable is not a sign of weakness, it takes courage<br/>- Women should feel inspired and empowered to transform both their professional and personal lives<br/>- The ability to be authentic is the core of human connection"
     },
     {
         "sessionid": 1220,
@@ -163,7 +166,7 @@
         "starttime": "1899-12-30T19:00:00.000Z",
         "endtime": "1899-12-30T19:45:00.000Z",
         "speaker": "Katelin Cwieka, Kristina Tsipouras, Kristina Burkey, Rachel Dunham, Suzan Czajkowski",
-        "description": "Branding isn't just for business, it's part of our personal AND professional lives.  This panel of #ExtraordinaryWomen will describe how your story can be used to fuel your mission, highlighting the tools you can use to authentically connect with others, and share how to visually represent yourself with confidence.\n\nKEY LEARNINGS & TAKEAWAYS:\n\n- How to define your story and your strategy\n- Using your story to fuel your mission\n- Leveraging social media for authentic connections to your brand\n- Using visuals for branding in everyday life\n- How to adapt to the evolution of your brand"
+        "description": "Branding isn't just for business, it's part of our personal AND professional lives.  This panel of #ExtraordinaryWomen will describe how your story can be used to fuel your mission, highlighting the tools you can use to authentically connect with others, and share how to visually represent yourself with confidence.<br/><br/>\nKEY LEARNINGS & TAKEAWAYS:<br/><br/>- How to define your story and your strategy<br/>- Using your story to fuel your mission<br/>- Leveraging social media for authentic connections to your brand<br/>- Using visuals for branding in everyday life<br/>- How to adapt to the evolution of your brand"
     },
     {
         "sessionid": 1230,
@@ -178,7 +181,7 @@
         "starttime": "1899-12-30T20:00:00.000Z",
         "endtime": "1899-12-30T20:45:00.000Z",
         "speaker": "Michelle Mercier, Mal Duane, Chantel Bethea, Gayle Suzanne",
-        "description": "Do you ever set goals but just can't seem to accomplish them? Do you automatically place your dreams at the bottom of the \"To Do\" list?  Enough is enough!  This session is designed to remove the emotional blocks that are holding you back from success.  These #ExtraordinaryWomen will discuss the different types of self-sabotage that women often practice and how to combat them.  You'll walk away feeling empowered and ready to take on the world! \r\n\r\nKEY LEARNINGS & TAKEAWAYS:\r\n\r\n- Align your thoughts with your vision of success\r\n- Remove energy “drainers” from your life\r\n- Fight back when “victim mentality” sets in\r\n- Celebrate progress and NOT perfection\r\n- Put yourself at the TOP of your “To Do” List"
+        "description": "Do you ever set goals but just can't seem to accomplish them? Do you automatically place your dreams at the bottom of the \"To Do\" list?  Enough is enough!  This session is designed to remove the emotional blocks that are holding you back from success.  These #ExtraordinaryWomen will discuss the different types of self-sabotage that women often practice and how to combat them.  You'll walk away feeling empowered and ready to take on the world!<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- Align your thoughts with your vision of success<br/>- Remove energy “drainers” from your life<br/>- Fight back when “victim mentality” sets in<br/>- Celebrate progress and NOT perfection<br/>- Put yourself at the TOP of your “To Do” List"
     },
     {
         "sessionid": 1250,
@@ -190,10 +193,11 @@
     },
     {
         "sessionid": 1260,
-        "speechtitle": "Colorful Women Leading the Way",
+        "speechtitle": "Are You Being Too Guarded? Making Yourself Vulnerable in Both Your Professional & Personal Life",
         "starttime": "1899-12-30T20:00:00.000Z",
         "endtime": "1899-12-30T20:45:00.000Z",
-        "speaker": "Enna Jimenez, Roxann Cooke, Maria Salomao-Schmidt, Sylvia Ruiz, Brenda Cole"
+        "speaker": "Enna Jimenez, Roxann Cooke, Maria Salomao-Schmidt, Sylvia Ruiz, Brenda Cole",
+        "description": "What are you afraid of?  As women we have always struggled with vulnerability. What are the fears and barriers we experience, and what can we do to be more approachable, open and trusting?<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>-Being vulnerable is not a sign of weakness, it takes courage<br/>- Women should feel inspired and empowered to transform both their professional and personal lives<br/>- The ability to be authentic is the core of human connection"
     },
     {
         "sessionid": 1270,
@@ -201,7 +205,7 @@
         "starttime": "1899-12-30T20:00:00.000Z",
         "endtime": "1899-12-30T20:45:00.000Z",
         "speaker": "Katelin Cwieka, Kristina Tsipouras, Kristina Burkey, Rachel Dunham, Suzan Czajkowski",
-        "description": "Branding isn't just for business, it's part of our personal AND professional lives.  This panel of #ExtraordinaryWomen will describe how your story can be used to fuel your mission, highlighting the tools you can use to authentically connect with others, and share how to visually represent yourself with confidence.\n\nKEY LEARNINGS & TAKEAWAYS:\n\n- How to define your story and your strategy\n- Using your story to fuel your mission\n- Leveraging social media for authentic connections to your brand\n- Using visuals for branding in everyday life\n- How to adapt to the evolution of your brand"
+        "description": "Branding isn't just for business, it's part of our personal AND professional lives.  This panel of #ExtraordinaryWomen will describe how your story can be used to fuel your mission, highlighting the tools you can use to authentically connect with others, and share how to visually represent yourself with confidence.<br/><br/>KEY LEARNINGS & TAKEAWAYS:<br/><br/>- How to define your story and your strategy<br/>- Using your story to fuel your mission<br/>- Leveraging social media for authentic connections to your brand<br/>- Using visuals for branding in everyday life<br/>- How to adapt to the evolution of your brand"
     },
     {
         "sessionid": 1280,
@@ -210,12 +214,13 @@
         "endtime": "1899-12-30T20:45:00.000Z",
         "speaker": "Sandra Harmon, Rachael Rubin, Linda Townsend, Lisa Vasile, Jenna Stockwell"
     },
-    {
-        "sessionid": 1290,
-        "speechtitle": "Post Conference - Women & Wine",
-        "starttime": "1899-12-30T20:45:00.000Z",
-        "endtime": "1899-12-30T22:00:00.000Z",
-        "location": "Promenade & Lower Level",
-        "speaker": "Join us for shopping, sipping and celebrating after the conference!"
-    }
+  {
+    "sessionid": 1290,
+    "speechtitle": "Post Conference - Women & Wine",
+    "starttime": "1899-12-30T20:45:00.000Z",
+    "endtime": "1899-12-30T22:00:00.000Z",
+    "location": "Promenade & Lower Level",
+    "speaker": "Join us for shopping, sipping and celebrating after the conference!",
+    "description": "Join us for shopping, sipping and celebrating after the conference!"
+  }
 ]

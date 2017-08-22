@@ -30,16 +30,20 @@
     "website": "http://www.WGBH.com"
   },
   {
-    "name": "Kelly Macfarland",
+    "name": "Kelly MacFarland",
     "title": "Irresistible Comedian",
     "description": "As an experienced stand up comedian, Kelly has an extensive and well-rounded resume including comedy clubs, theaters, colleges and several television appearances. Kelly is currently touring clubs and colleges across the country and has entertained our US troops overseas.  Kelly headlined the 2009 Boston Women in Comedy Festival, was first runner up in the 2009 Boston Comedy Festival, voted Best of the Fest 2010 Aspen Rooftop Comedy Festival, appeared in the Oddball Festival 2015 and performed on the Verizon Comedy Stage at Boston Calling 2016 and 2017 (coming soon). Kelly has also appeared on Stand Up in Stilettos on the TV Guide Channel, Comedy Central’s Premium Blend and is the host of the web series, Fit or Fad for Scripps Network. Most recently, Kelly was part of the Top 100 Comedians of Last Comic Standing Season 9, appeared on AXS Gotham Comedy LIVE and won the professional category of the Ladies of Laughter 2016 competition.",
     "website": "http://kellymacfarland.com/"
   },
   {
-    "name": "Rachael Rubin"
+    "name": "Rachael Rubin",
+    "title": "Owner & Founder, Beauty PaRLR & RLR Studios",
+    "description": "As the CEO and Founder of the PARLR, Rachael is a true entrepreneur in every sense of the word. Published in both her work as a photographer and a make up artist, the term \"beauty connoisseur\" (named by Boston Magazine) comes well deserved."
   },
   {
-    "name": "Linda Townsend"
+    "name": "Linda Townsend",
+    "title": "Owner, Release Well-Being Center, LLC",
+    "description": "As the Founder of Release Well-being Center, Linda is proud and honored to announce that part of that dream will incorporate the Nathan Fisher House."
   },
   {
     "name": "Lisa Vasile",
@@ -54,35 +58,45 @@
     "website": "jenna.travellight.com"
   },
   {
-    "name": "Bobbie Carlton"
+    "name": "Bobbie Carlton",
+    "title": "Founder, Innovation Women",
+    "description": "Bobbie Carlton is an award-winning marketing, PR and social media professional who is also the founder of Innovation Women"
   },
   {
-    "name": "Carol Fishman Cohen"
+    "name": "Carol Fishman Cohen",
+    "title": "CEO & Co-founder, iRelaunch",
+    "description": "Carol Fishman Cohen is CEO and co-founder of iRelaunch, a comprehensive career reentry resource for employers, individuals, universities and professional associations."
   },
   {
-    "name": "Ilyssa Greene Frey",
+    "name": "Ilyssa Frey",
     "title": "Director of Alumnae Communications and Marketing, Wellesley College Alumnae Association",
     "description": "ilyssafrey@gmail.com"
   },
   {
-    "name": "Cheryl Kiser"
+    "name": "Cheryl Kiser",
+    "title": "Managing Director, The Lewis Institute for Social Entrepreneurship & Babson Social Innovation Lab, Babson College"
   },
   {
-    "name": "Sylvia Diaz-Ruiz",
+    "name": "Sylvia Ruiz",
     "title": "Co-Owner, Ruiz Transportation Services, LLC",
     "description": "transport@rideruiz.com"
   },
   {
-    "name": "Enna Jimenez"
+    "name": "Enna Jimenez",
+    "title": "President, ALPFA - Boston Chapter",
+    "description": "Enna is a senior IT and business professional with expertise in quality assurance (QA) and organizational change management with experience working in financial services, education, advertising and software industries"
   },
   {
-    "name": "Brenda Cole"
+    "name": "Brenda Cole",
+    "title": "VP, Marketplace Inclusion Development, Harvard Pilgrim Health Care"
   },
   {
-    "name": "Roxann Cooke"
+    "name": "Roxann Cooke",
+    "title": "SVP, Regional Manager, Eastern Bank"
   },
   {
-    "name": "Dana Neshe"
+    "name": "Dana Neshe",
+    "title": "Chief Risk Officer, Middlesex Savings Bank"
   },
   {
     "name": "Nancy Cantor",
@@ -96,33 +110,40 @@
     "description": "bonnie.biocchi@habitatmwgw.org"
   },
   {
-    "name": "Cheryl Cronin"
+    "name": "Cheryl Cronin",
+    "title": "CEO, Boston Public Market"
   },
   {
-    "name": "Helen Lemoine"
+    "name": "Helen Lemoine",
+    "title": "Executive Director, Leadership MetroWest"
   },
   {
-    "name": "Janell Burley Hofmann"
+    "name": "Janell Burley Hofmann",
+    "title": "Author of iRules, International Speaker & Consultant"
   },
   {
-    "name": "Vanessa Gobes"
+    "name": "Vanessa Gobes",
+    "title": "Author & Co-founder of Chrysalis Meditation Center"
   },
   {
-    "name": "Belinda Rosenblum"
+    "name": "Belinda Rosenblum",
+    "title": "CPA, Author, President or OwnYourMoney.com"
   },
   {
     "name": "Marie Paturzo",
     "title": "Financial Advisor, Merrill Lynch"
   },
   {
-    "name": "Clemia Brittenum"
+    "name": "Clemia Brittenum",
+    "title": "AVP, Organizational Development, The TJX Companies"
   },
   {
     "name": "Katelin Cwieka",
     "title": "AVP Social Media & Brand Communications, Avidia Bank"
   },
   {
-    "name": "Kristina Tsipouras"
+    "name": "Kristina Tsipouras",
+    "title": "Badass Entreprenuer, CEO Moroccan Magic Organic Beauty Products"
   },
   {
     "name": "Suzan Czajkowski",
@@ -136,7 +157,8 @@
     "website": "www.yourbrandtherapy.com"
   },
   {
-    "name": "Catherine Hummel"
+    "name": "Catherine Hummel",
+    "title": "Love Coach, Healer, Women's Life Coach"
   },
   {
     "name": "Samantha Burns",
@@ -145,27 +167,83 @@
     "website": "lovesuccessfully.com"
   },
   {
-    "name": "Susan Trotter, Ph.D.",
+    "name": "Dr. Susan Trotter",
     "title": "Professional Life Coach, Susan Trotter, Ph.D. - Life Coaching",
     "description": "Susantrotterphd@gmail.com",
     "website": "Facebook.com/susantrotterphd/"
   },
   {
-    "name": "Carly Baker"
+    "name": "Carly Baker",
+    "title": "Licensed Independent Clinical Social Worker"
   },
   {
-    "name": "Erin Mahoney"
+    "name": "Erin Mahoney",
+    "title": "Author, CEO & Founder Girl Power Go"
   },
   {
-    "name": "Michelle Cove"
+    "name": "Michelle Cove",
+    "title": "Executive Director, MEDIAGIRLS, Inc."
   },
   {
-    "name": "Siiri Morley"
+    "name": "Siiri Morley",
+    "title": "Executive Director, Strong Women, Strong Girls"
   },
   {
     "name": "Maria Marlowe",
     "title": "Integrative Nutrition Health Coach & Author, Maria Marlowe Integrative Nutrition ",
     "description": "maria@mariamarlowe.com",
     "website": "www.mariamarlowe.com"
+  },
+  {
+    "name": "Jennifer Rutland",
+    "title": "Executive Vice President, RCS Behavioral and Educational Consulting"
+  },
+  {
+    "name": "Amy Gardner",
+    "title": "Owner of MetroWest Nutrition"
+  },
+  {
+    "name": "Tobi Russell",
+    "title": "Vice President, Human Resources at Cumberland Farms"
+  },
+  {
+    "name": "Kenetra Hinkins",
+    "title": "Founder & Co-President of BGMT, Brilliance Guidance Melanin Togetherness"
+  },
+  {
+    "name": "Colleen Phelps",
+    "title": "Founder & Coach, STRIVERS Running Club for Girls"
+  },
+  {
+    "name": "Michelle Mercier",
+    "title": "CEO, Create Honesty"
+  },
+  {
+    "name": "Mal Duane",
+    "title": "CEO, Live Smart - Love Smart & MetroWest Homes"
+  },
+  {
+    "name": "Chantel Bethea",
+    "title": "CEO & President, Women In Action, Inc."
+  },
+  {
+    "name": "Gayle Suzanne",
+    "title": "TV Host, Life Coach, Author, Motivational Speaker"
+  },
+  {
+    "name": "Deana Coyle",
+    "title": "Founder, Vesta: Redefining Divorce"
+  },
+  {
+    "name": "Kristina Burkey",
+    "title": "Entrepreneur & Owner of Calliope Paperie"
+  },
+  {
+    "name": "Sandra Harmon",
+    "title": "Director, Maternal Child Health, MetroWest Medical Center"
+  },
+  {
+    "name": "Maria Salomao-Schmidt",
+    "title": "International Life Coach, Author of Finally FULL of Yourself: Unlocking Your Spiritual DNA"
   }
 ]

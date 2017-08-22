@@ -376,11 +376,13 @@ function ShowSessionDetail() {
     
     var speakerEle = $("#" + sessionRowId + " td div p span").filter(".eventSpeaker");
     var speakersToBeMatched = $(speakerEle).html();
+    var numberOfSpeakersMatched = 0;
 
     $(gSpeakers).each(function (index) {
         var speaker = this.name;
         if (speakersToBeMatched.indexOf(speaker) >= 0) {
             this.show = true;
+            numberOfSpeakersMatched++;
         } else {
             this.show = false;
         }
@@ -403,6 +405,12 @@ function ShowSessionDetail() {
             this.showTitle = true;
         }
     });
+
+    if (!numberOfSpeakersMatched == 0) {
+        sessionDetail.showSpeakerHeading = true;
+    } else {
+        sessionDetail.showSpeakerHeading = false;
+    }
 
     sessionDetail.speakerInfoItems = gSpeakers;
 

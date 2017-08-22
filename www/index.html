@@ -108,6 +108,46 @@
 
 
         <script id="scheduleTemplate" type="text/x-handlebars-template">
+            <br />
+            <table style="width:100%; height:2px; background-color:#b277c9">
+                <tr style="font-size:20px;">&nbsp;Wednesday, September 13</tr>
+            </table>
+            <table id="schedule" style="border-spacing:0px 10px">
+                <tbody>
+                    <!--Preconference Event-->
+                    <tr id="sessionRow0000" class="sessionRow sessionNotSelected block shadow">
+                        <!--Left box-->
+                        <th>
+                            <span class="eventTime sessionDetailNavigator">
+                                <span class="startTime">5:30 PM</span>
+                                <br />
+                                <span class="endTime">8:00 PM</span>
+                            </span>
+                        </th>
+                        <!--Right box-->
+                        <td>
+                            <div class="eventInfo sessionDetailNavigator">
+                                <p>
+                                    <span class="bold eventTitle">Exclusive VIP Reception</span>
+                                    <br>
+                                    <span class="eventSpeaker">Kelly MacFarland</span>
+                                    <!--<br>
+                                    <span class="eventLocation"></span>
+                                    <span class="eventDescription" style="display:none;">Description</span>
+                               -->
+                                    </p>
+                            </div>
+                        </td>
+                        <td style="text-align:center; width:50px">
+                            <div class="star"><i id="sessionSelector0000" class="sessionSelector fa fa-star-o fa-lg"></i></div>
+                        </td>
+                    </tr>                    
+                </tbody>
+            </table>
+            <br />
+            <table style="width:100%; height:2px; background-color:#b277c9">
+                <tr style="font-size:20px;">&nbsp;Thursday, September 14</tr>
+            </table>
             <table id="schedule" style="border-spacing:0px 10px">
                 <tbody>
                     <!--From the JSON data loaded from scheduleData.json, foreach object in the sessions array apply this html template block: -->
@@ -173,11 +213,14 @@
             </table>
             {{#if showSessionDescription}}
             <br />
+            <table style="width:100%; height:2px; background-color:#b277c9">
+                <tr style="font-size:20px;">&nbsp;Description</tr>
+            </table>
             <table id="description" style="border-spacing:0px 10px; width:100%;">
                 <tr>
                     <td style="width:5px;"></td>
                     <td>
-                        <p class="speakerInfo shadow sessionInfoStyle">
+                        <p class="shadow sessionInfoStyle" style="font-size:14px;">
                             {{{description}}}
                         </p>
                     </td>
@@ -185,10 +228,13 @@
                 </tr>
             </table>
             {{/if}}
+            {{#if showSpeakerHeading}}
             <br />
             <table style="width:100%; height:2px; background-color:#b277c9">
                 <tr style="font-size:20px;">&nbsp;Speakers</tr>
             </table>
+            <br />
+            {{/if}}
             <table id="speakers" style="border-spacing:0px 10px; width:100%;">
                 <tbody>
                     <!--From the JSON data loaded from speakers.json, foreach object in the speaker array apply this html template block: -->
@@ -219,6 +265,7 @@
                     </tr>
                     {{/if}}
                     {{/speakerInfoItems}}
+                    
                 </tbody>
             </table>
         </script>
