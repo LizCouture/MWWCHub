@@ -115,21 +115,22 @@
                     <tr id="sessionRow{{sessionid}}" class="sessionRow sessionNotSelected block shadow">
                         <!--Left box-->
                         <th>
-                            <a class="eventTime sessionDetailNavigator">
+                            <span class="eventTime sessionDetailNavigator">
                                 <span class="startTime">{{GetLocalTimeLabel starttime}}</span>
                                 <br />
                                 <span class="endTime">{{GetLocalTimeLabel endtime}}</span>
-                            </a>
+                            </span>
                         </th>
                         <!--Right box-->
                         <td>
                             <div class="eventInfo sessionDetailNavigator">
                                 <p>
-                                    <span class="bold eventTitle">{{speechtitle}}</span>
+                                    <span class="bold eventTitle">{{{speechtitle}}}</span>
                                     <br>
-                                    <span class="eventSpeaker">{{speaker}}</span>
+                                    <span class="eventSpeaker">{{{speaker}}}</span>
                                     <br>
-                                    <span class="eventLocation">{{location}}</span>
+                                    <span class="eventLocation">{{{location}}}</span>
+                                    <span class="eventDescription" style="display:none;">{{{description}}}</span>
                                 </p>
                             </div>
                         </td>
@@ -148,19 +149,19 @@
                     <tr class="block shadow">
                         <!--Left box-->
                         <th>
-                            <a class="eventTime">
+                            <span class="eventTime">
                                 <span class="startTime">{{startTime}}</span>
                                 <br>
                                 <span class="endTime">{{endTime}}</span>
-                            </a>
+                            </span>
                         </th>
                         <!--Right box-->
                         <td>
                             <div class="eventInfo">
                                 <p>
-                                    <span class="bold eventTitle">{{speechTitle}}</span>
+                                    <span class="bold eventTitle">{{{speechTitle}}}</span>
                                     <br>
-                                    <span class="eventLocation">{{location}}</span>
+                                    <span class="eventLocation">{{{location}}}</span>
                                 </p>
                             </div>
                         </td>
@@ -170,6 +171,20 @@
                     </tr>
                 </tbody>
             </table>
+            {{#if showSessionDescription}}
+            <br />
+            <table id="description" style="border-spacing:0px 10px; width:100%;">
+                <tr>
+                    <td style="width:5px;"></td>
+                    <td>
+                        <p class="speakerInfo shadow sessionInfoStyle">
+                            {{{description}}}
+                        </p>
+                    </td>
+                    <td style="width:5px;"></td>
+                </tr>
+            </table>
+            {{/if}}
             <br />
             <table style="width:100%; height:2px; background-color:#b277c9">
                 <tr style="font-size:20px;">&nbsp;Speakers</tr>
@@ -184,18 +199,18 @@
                         <td>
                             <div class="speakerInfo shadow sessionInfoStyle">
                                 <p>
-                                    <span style="font-size: 18px; font-variant: small-caps;" class="bold speaker">{{name}}</span>
+                                    <span style="font-size: 18px; font-variant: small-caps;" class="bold speaker">{{{name}}}</span>
                                     {{#if showTitle}}
                                     <br><br />
-                                    <span style ="font-weight:bold; font-size:14px;" class="speakerTtile">{{title}}</span>
+                                    <span style ="font-weight:bold; font-size:14px;" class="speakerTtile">{{{title}}}</span>
                                     {{/if}}
                                     {{#if showDescription}}
                                     <br>
-                                    <span style="font-size:12px" class="speakerDescription">{{description}}</span>
+                                    <span style="font-size:12px" class="speakerDescription">{{{description}}}</span>
                                     {{/if}}
                                     {{#if showWebsite}}
                                     <br /><br />
-                                    <span style="text-align:center;"><a href="{{website}}" target="_blank" style="color:hotpink;"><i style="color:hotpink;" class="fa fa-external-link fa-lg" aria-hidden="true"></i> Website</a></span>
+                                    <span style="text-align:center;"><a href="{{{website}}}" target="_blank" style="color:hotpink;"><i style="color:hotpink;" class="fa fa-external-link fa-lg" aria-hidden="true"></i> Website</a></span>
                                     {{/if}}
                                 </p>
                             </div>

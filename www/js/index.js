@@ -68,7 +68,7 @@ var app = {
         }
 
         Handlebars.registerHelper('GetLocalTimeLabel', GetLocalTimeFromUtcDateTimeString);
-
+        //Handlebars.registerHelper('ReplaceBreakFormatting', ReplaceBreakFormatting);
 
         $.getJSON("data/schedule.json", function (data) {
             var jsonRoot = {};
@@ -349,9 +349,9 @@ function ShowSessionDetail() {
     var sessionRowId = sessionRow.attr("id");
 
     //Retrieve and set the time.
-    var startTimeEle = $("#" + sessionRowId + " th a span").filter(".startTime");
+    var startTimeEle = $("#" + sessionRowId + " th span span").filter(".startTime");
     var startTime = $(startTimeEle).html();
-    var endTimeEle = $("#" + sessionRowId + " th a span").filter(".endTime");
+    var endTimeEle = $("#" + sessionRowId + " th span span").filter(".endTime");
     var endTime = $(endTimeEle).html();
 
     var sessionDetail = {};
@@ -367,6 +367,12 @@ function ShowSessionDetail() {
     var locationEle = $("#" + sessionRowId + " td div p span").filter(".eventLocation");
     var location = $(locationEle).html();
     sessionDetail.location = location;
+
+    //Retrieve and set the session description.
+    var descriptionEle = $("#" + sessionRowId + " td div p span").filter(".eventDescription");
+    var description = $(descriptionEle).html();
+    sessionDetail.description = description;
+    sessionDetail.showSessionDescription = (IsEmpty(description) === false);
     
     var speakerEle = $("#" + sessionRowId + " td div p span").filter(".eventSpeaker");
     var speakersToBeMatched = $(speakerEle).html();
@@ -636,6 +642,12 @@ function GetLocalTimeFromUtcDateTimeString(utcDateTimeInString) {
     return strTime;
 }
 
+/*
+function ReplaceBreakFormatting(rawData) {
+    var adjustedData = rawData.replace("\r\n", "<br />");
+    return adjustedData;
+}
+*/
 
 
 $('a[target=_blank]').on('click', function (e) {
