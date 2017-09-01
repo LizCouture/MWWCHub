@@ -214,13 +214,13 @@
         "endtime": "1899-12-30T20:45:00.000Z",
         "speaker": "Sandra Harmon, Rachael Rubin, Linda Townsend, Lisa Vasile, Jenna Stockwell"
     },
-  {
-    "sessionid": 1290,
-    "speechtitle": "Post Conference - Women & Wine",
-    "starttime": "1899-12-30T20:45:00.000Z",
-    "endtime": "1899-12-30T22:00:00.000Z",
-    "location": "Promenade & Lower Level",
-    "speaker": "Join us for shopping, sipping and celebrating after the conference!",
-    "description": "Join us for shopping, sipping and celebrating after the conference!"
-  }
+    {
+        "sessionid": 1290,
+        "speechtitle": "Post Conference - Women & Wine",
+        "starttime": "1899-12-30T20:45:00.000Z",
+        "endtime": "1899-12-30T22:00:00.000Z",
+        "location": "Promenade & Lower Level",
+        "speaker": "Join us for shopping, sipping and celebrating after the conference!",
+        "description": "Join us for shopping, sipping and celebrating after the conference!"
+    }
 ]
