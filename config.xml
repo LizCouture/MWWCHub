@@ -25,4 +25,5 @@
     <plugin name="cordova-plugin-console" spec="~1.0.8-dev" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
+    <icon src="www/img/applogo.png" />
 </widget>
