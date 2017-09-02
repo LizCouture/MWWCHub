@@ -1,0 +1,10 @@
+node_modules
+platforms
+plugins
+*.xcuserdatad
+resources/signing
+package.json
+package-lock.json
+typings
+.vscode
+jsconfig.json

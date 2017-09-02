@@ -7,6 +7,12 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "software.geisel.mwwchub"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "software.geisel.mwwchub"
+        },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "software.geisel.mwwchub"
         }
