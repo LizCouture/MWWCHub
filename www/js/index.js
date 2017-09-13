@@ -565,18 +565,18 @@ function ShowSponsors() {
     $("#goBackLabel").html(gActiveGoBackTitle);
     $("#goBackNavigator").show();
 
-    if (gSponsorsLoaded === false) {
+    // if (gSponsorsLoaded === false) {
 
-        if (enableCheckJsonDataUpdates === true) {
-            // Try getting it from the data web site first.
-            LoadSponsors(jsonDataSite + "/sponsors.json");
-        }
+    //     if (enableCheckJsonDataUpdates === true) {
+    //         // Try getting it from the data web site first.
+    //         LoadSponsors(jsonDataSite + "/sponsors.json");
+    //     }
 
         if (gSponsorsLoaded === false) {
             // Fall back to getting the data locally.
             LoadSponsors("data/sponsors.json");
         }
-    }
+    // }
     $(".footer").hide();
     targetViewEle.show();
 
